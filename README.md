@@ -54,6 +54,11 @@ python scrape_leads.py --urls-file urls.txt --delay 3 --out output/leads.csv
 - Results from all pages are merged and **de-duplicated** by email → domain →
   name/company, filling blank fields from matching records. Pass `--no-dedupe`
   to keep every raw record.
+- `--company-merge` collapses every lead sharing a domain into **one company**
+  (matched by website *or* email domain), aggregating all its emails and phones
+  into `; `-separated lists — so `info@acme.com`, `sales@acme.com`, and
+  `bob@acme.com` become a single Acme row. Use this for company-level lists;
+  omit it when you want individual contacts.
 
 ### 2. Find leads across many sites — `search_leads.py`
 

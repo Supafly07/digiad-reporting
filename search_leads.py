@@ -54,10 +54,21 @@ def main() -> None:
         action="store_true",
         help="Keep duplicate leads instead of merging them",
     )
+    parser.add_argument(
+        "--company-merge",
+        action="store_true",
+        help="Collapse all leads at the same domain into one company "
+        "(aggregates emails/phones)",
+    )
     args = parser.parse_args()
 
     result = search(args.query, args.results)
-    write_output(result, args.out, dedupe=not args.no_dedupe)
+    write_output(
+        result,
+        args.out,
+        dedupe=not args.no_dedupe,
+        company_merge=args.company_merge,
+    )
 
 
 if __name__ == "__main__":

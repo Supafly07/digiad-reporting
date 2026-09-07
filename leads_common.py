@@ -93,6 +93,66 @@ def dedupe_leads(leads: List[dict]) -> List[dict]:
     return list(merged.values()) + passthrough
 
 
+def _email_domain(email: Optional[str]) -> Optional[str]:
+    """Domain part of an email address, lowercased."""
+    if not email or "@" not in email:
+        return None
+    return email.strip().lower().rsplit("@", 1)[-1] or None
+
+
+def _join_unique(values: List[Optional[str]]) -> str:
+    """Distinct, order-preserving, non-empty values joined for one CSV cell."""
+    seen: dict = {}
+    for v in values:
+        v = (v or "").strip()
+        if v and v.lower() not in seen:
+            seen[v.lower()] = v
+    return "; ".join(seen.values())
+
+
+def merge_by_domain(leads: List[dict]) -> List[dict]:
+    """Collapse every lead sharing a web/email domain into one company record.
+
+    Unlike dedupe_leads (which keeps distinct contacts), this treats a domain as
+    a single company: all its emails and phones are aggregated into "; "-joined
+    lists. Leads with no resolvable domain fall back to dedupe_leads behavior.
+    """
+    groups: dict = {}
+    order: List[str] = []
+    no_domain: List[dict] = []
+    for lead in leads:
+        if not isinstance(lead, dict):
+            continue
+        domain = _domain(lead.get("website")) or _email_domain(lead.get("email"))
+        if not domain:
+            no_domain.append(lead)
+            continue
+        if domain not in groups:
+            groups[domain] = []
+            order.append(domain)
+        groups[domain].append(lead)
+
+    merged: List[dict] = []
+    for domain in order:
+        members = groups[domain]
+        merged.append(
+            {
+                "name": next((m.get("name") for m in members if m.get("name")), None),
+                "company": next(
+                    (m.get("company") for m in members if m.get("company")), None
+                ),
+                "email": _join_unique([m.get("email") for m in members]) or None,
+                "phone": _join_unique([m.get("phone") for m in members]) or None,
+                "website": domain,
+                "address": next(
+                    (m.get("address") for m in members if m.get("address")), None
+                ),
+            }
+        )
+    # Domainless records still get the normal contact-level dedupe.
+    return merged + dedupe_leads(no_domain)
+
+
 def _extract_leads(result) -> List[dict]:
     """Pull a flat list of lead dicts out of whatever the graph returned."""
     if isinstance(result, dict) and "leads" in result:
@@ -107,13 +167,22 @@ def _extract_leads(result) -> List[dict]:
 FIELDNAMES = list(Lead.model_fields.keys())
 
 
-def write_output(result, out: Optional[str], dedupe: bool = False) -> None:
+def write_output(
+    result, out: Optional[str], dedupe: bool = False, company_merge: bool = False
+) -> None:
     """Write results as JSON or CSV (by file extension), or print JSON.
 
-    When dedupe is True, results are normalized to {"leads": [...]} with
-    duplicate records merged before writing.
+    company_merge collapses all leads sharing a domain into one company record
+    (aggregating emails/phones). Otherwise dedupe merges distinct contacts by
+    email/domain/name. Either normalizes results to {"leads": [...]}.
     """
-    if dedupe:
+    if company_merge:
+        before = _extract_leads(result)
+        after = merge_by_domain(before)
+        if len(after) != len(before):
+            print(f"Merged {len(before)} leads -> {len(after)} companies by domain")
+        result = {"leads": after}
+    elif dedupe:
         before = _extract_leads(result)
         after = dedupe_leads(before)
         if len(after) != len(before):
