@@ -60,6 +60,12 @@ def main() -> None:
         help="Collapse all leads at the same domain into one company "
         "(aggregates emails/phones)",
     )
+    parser.add_argument(
+        "--append",
+        action="store_true",
+        help="Fold existing rows in --out into the results (build a master list "
+        "across runs)",
+    )
     args = parser.parse_args()
 
     result = search(args.query, args.results)
@@ -68,6 +74,7 @@ def main() -> None:
         args.out,
         dedupe=not args.no_dedupe,
         company_merge=args.company_merge,
+        append=args.append,
     )
 
 

@@ -59,6 +59,18 @@ python scrape_leads.py --urls-file urls.txt --delay 3 --out output/leads.csv
   into `; `-separated lists — so `info@acme.com`, `sales@acme.com`, and
   `bob@acme.com` become a single Acme row. Use this for company-level lists;
   omit it when you want individual contacts.
+- `--append` builds a **master list across runs**: it reads the existing
+  `--out` file (`.csv` or `.json`), folds those rows in with the new results,
+  and re-runs the same dedupe/company-merge over the union before writing back.
+  Re-running is idempotent — nothing gets duplicated. Keep the dedupe/merge
+  flags consistent between runs so the master list stays coherent.
+
+```bash
+# Grow output/master.csv over several scraping sessions
+python scrape_leads.py --urls-file batch1.txt --out output/master.csv --append
+python scrape_leads.py --urls-file batch2.txt --out output/master.csv --append
+python search_leads.py "roofing companies in Miami" --out output/master.csv --append
+```
 
 ### 2. Find leads across many sites — `search_leads.py`
 

@@ -101,12 +101,17 @@ def _email_domain(email: Optional[str]) -> Optional[str]:
 
 
 def _join_unique(values: List[Optional[str]]) -> str:
-    """Distinct, order-preserving, non-empty values joined for one CSV cell."""
+    """Distinct, order-preserving, non-empty values joined for one CSV cell.
+
+    Each input may itself be a '; '-joined cell (e.g. re-merging an existing
+    file), so values are split apart first to keep merging idempotent.
+    """
     seen: dict = {}
-    for v in values:
-        v = (v or "").strip()
-        if v and v.lower() not in seen:
-            seen[v.lower()] = v
+    for value in values:
+        for v in (value or "").split(";"):
+            v = v.strip()
+            if v and v.lower() not in seen:
+                seen[v.lower()] = v
     return "; ".join(seen.values())
 
 
@@ -167,27 +172,56 @@ def _extract_leads(result) -> List[dict]:
 FIELDNAMES = list(Lead.model_fields.keys())
 
 
+def read_existing_leads(path: Path) -> List[dict]:
+    """Read leads from a previous run's .csv or .json file (empty if missing)."""
+    if not path.exists():
+        return []
+    if path.suffix.lower() == ".csv":
+        with path.open(newline="", encoding="utf-8") as f:
+            return [
+                {k: (v or None) for k, v in row.items() if k in FIELDNAMES}
+                for row in csv.DictReader(f)
+            ]
+    return _extract_leads(json.loads(path.read_text(encoding="utf-8")))
+
+
 def write_output(
-    result, out: Optional[str], dedupe: bool = False, company_merge: bool = False
+    result,
+    out: Optional[str],
+    dedupe: bool = False,
+    company_merge: bool = False,
+    append: bool = False,
 ) -> None:
     """Write results as JSON or CSV (by file extension), or print JSON.
 
     company_merge collapses all leads sharing a domain into one company record
     (aggregating emails/phones). Otherwise dedupe merges distinct contacts by
-    email/domain/name. Either normalizes results to {"leads": [...]}.
+    email/domain/name. When append is set and the output file exists, its rows
+    are folded in first so a master list grows across runs. Either merge
+    normalizes results to {"leads": [...]}.
     """
+    new_leads = _extract_leads(result)
+    existing = read_existing_leads(Path(out)) if (append and out) else []
+    combined = existing + new_leads
+
     if company_merge:
-        before = _extract_leads(result)
-        after = merge_by_domain(before)
-        if len(after) != len(before):
-            print(f"Merged {len(before)} leads -> {len(after)} companies by domain")
-        result = {"leads": after}
+        final = merge_by_domain(combined)
+        if existing or len(final) != len(combined):
+            print(
+                f"Merged {len(existing)} existing + {len(new_leads)} new "
+                f"-> {len(final)} companies by domain"
+            )
     elif dedupe:
-        before = _extract_leads(result)
-        after = dedupe_leads(before)
-        if len(after) != len(before):
-            print(f"Deduplicated {len(before)} -> {len(after)} leads")
-        result = {"leads": after}
+        final = dedupe_leads(combined)
+        if existing or len(final) != len(combined):
+            print(
+                f"Merged {len(existing)} existing + {len(new_leads)} new "
+                f"-> {len(final)} leads"
+            )
+    else:
+        final = combined
+
+    result = {"leads": final}
 
     if not out:
         print(json.dumps(result, indent=2, ensure_ascii=False))
