@@ -3,6 +3,7 @@
 import csv
 import json
 import os
+import re
 from pathlib import Path
 from typing import List, Optional
 
@@ -44,6 +45,54 @@ def build_config(extra: Optional[dict] = None) -> dict:
     return config
 
 
+def _domain(website: Optional[str]) -> Optional[str]:
+    """Normalize a website to a bare domain for matching (drop scheme/www/path)."""
+    if not website:
+        return None
+    host = re.sub(r"^\w+://", "", website.strip().lower())
+    host = host.split("/")[0].split("?")[0]
+    return host[4:] if host.startswith("www.") else host or None
+
+
+def _dedupe_key(lead: dict) -> Optional[str]:
+    """Identity for a lead: email, else domain, else name+company. None = keep as-is."""
+    email = (lead.get("email") or "").strip().lower()
+    if email:
+        return f"email:{email}"
+    domain = _domain(lead.get("website"))
+    if domain:
+        return f"domain:{domain}"
+    name = (lead.get("name") or "").strip().lower()
+    company = (lead.get("company") or "").strip().lower()
+    if name or company:
+        return f"nc:{name}|{company}"
+    return None
+
+
+def dedupe_leads(leads: List[dict]) -> List[dict]:
+    """Merge duplicate leads, filling blank fields from later matches.
+
+    Records with no identifying field at all are kept as-is (never merged).
+    """
+    merged: dict = {}
+    passthrough: List[dict] = []
+    for lead in leads:
+        if not isinstance(lead, dict):
+            continue
+        key = _dedupe_key(lead)
+        if key is None:
+            passthrough.append(lead)
+            continue
+        if key not in merged:
+            merged[key] = dict(lead)
+        else:
+            existing = merged[key]
+            for field, value in lead.items():
+                if not existing.get(field) and value:
+                    existing[field] = value
+    return list(merged.values()) + passthrough
+
+
 def _extract_leads(result) -> List[dict]:
     """Pull a flat list of lead dicts out of whatever the graph returned."""
     if isinstance(result, dict) and "leads" in result:
@@ -58,8 +107,19 @@ def _extract_leads(result) -> List[dict]:
 FIELDNAMES = list(Lead.model_fields.keys())
 
 
-def write_output(result, out: Optional[str]) -> None:
-    """Write results as JSON or CSV (by file extension), or print JSON."""
+def write_output(result, out: Optional[str], dedupe: bool = False) -> None:
+    """Write results as JSON or CSV (by file extension), or print JSON.
+
+    When dedupe is True, results are normalized to {"leads": [...]} with
+    duplicate records merged before writing.
+    """
+    if dedupe:
+        before = _extract_leads(result)
+        after = dedupe_leads(before)
+        if len(after) != len(before):
+            print(f"Deduplicated {len(before)} -> {len(after)} leads")
+        result = {"leads": after}
+
     if not out:
         print(json.dumps(result, indent=2, ensure_ascii=False))
         return

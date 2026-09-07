@@ -49,10 +49,15 @@ def main() -> None:
         help="How many search results to scrape (default 3). More = slower + costlier.",
     )
     parser.add_argument("--out", help="Write to this file (.json or .csv)")
+    parser.add_argument(
+        "--no-dedupe",
+        action="store_true",
+        help="Keep duplicate leads instead of merging them",
+    )
     args = parser.parse_args()
 
     result = search(args.query, args.results)
-    write_output(result, args.out)
+    write_output(result, args.out, dedupe=not args.no_dedupe)
 
 
 if __name__ == "__main__":

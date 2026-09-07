@@ -34,7 +34,7 @@ There are two entry points. Both share the `Lead` schema and output helpers in
 `leads_common.py`, and both write **JSON or CSV** depending on the `--out`
 extension (no `--out` prints JSON to the terminal).
 
-### 1. Scrape one page you already have — `scrape_leads.py`
+### 1. Scrape pages you already have — `scrape_leads.py`
 
 ```bash
 # Print JSON to the terminal
@@ -44,7 +44,16 @@ python scrape_leads.py https://example.com/directory
 python scrape_leads.py https://example.com/members \
     --prompt "Extract every business listing with contact details" \
     --out output/leads.csv
+
+# Several pages at once, from args or a file (one URL per line, # = comment)
+python scrape_leads.py https://a.com https://b.com --out output/leads.csv
+python scrape_leads.py --urls-file urls.txt --delay 3 --out output/leads.csv
 ```
+
+- `--delay SECONDS` (default 2) waits between pages so you don't hammer a host.
+- Results from all pages are merged and **de-duplicated** by email → domain →
+  name/company, filling blank fields from matching records. Pass `--no-dedupe`
+  to keep every raw record.
 
 ### 2. Find leads across many sites — `search_leads.py`
 
@@ -59,7 +68,8 @@ python search_leads.py "commercial real estate agencies in Chicago" \
 ```
 
 `--results N` sets how many search results to scrape (default 3). Each result
-is a separate LLM pass, so more results = more time and more API spend.
+is a separate LLM pass, so more results = more time and more API spend. Merged
+results are de-duplicated the same way; pass `--no-dedupe` to keep every record.
 
 Output records have `name`, `company`, `email`, `phone`, `website`, and
 `address` (missing fields come back `null`/blank). Edit the `Lead` schema in
