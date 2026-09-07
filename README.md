@@ -30,19 +30,40 @@ cp .env.example .env             # then edit .env and paste your OPENAI_API_KEY
 
 ## Usage
 
+There are two entry points. Both share the `Lead` schema and output helpers in
+`leads_common.py`, and both write **JSON or CSV** depending on the `--out`
+extension (no `--out` prints JSON to the terminal).
+
+### 1. Scrape one page you already have — `scrape_leads.py`
+
 ```bash
-# Scrape one page, print JSON to the terminal
+# Print JSON to the terminal
 python scrape_leads.py https://example.com/directory
 
-# Custom extraction prompt + save to a file
+# Custom prompt, save as CSV
 python scrape_leads.py https://example.com/members \
     --prompt "Extract every business listing with contact details" \
-    --out output/leads.json
+    --out output/leads.csv
 ```
 
-Output is a list of records with `name`, `company`, `email`, `phone`,
-`website`, and `address` (missing fields come back `null`). Edit the `Lead`
-schema in `scrape_leads.py` to change what gets extracted.
+### 2. Find leads across many sites — `search_leads.py`
+
+Uses ScrapeGraphAI's `SearchGraph`: it runs a web search for your query,
+scrapes the top results, and merges what it finds.
+
+```bash
+python search_leads.py "dental clinics in Austin Texas with contact details"
+
+python search_leads.py "commercial real estate agencies in Chicago" \
+    --results 5 --out output/agencies.csv
+```
+
+`--results N` sets how many search results to scrape (default 3). Each result
+is a separate LLM pass, so more results = more time and more API spend.
+
+Output records have `name`, `company`, `email`, `phone`, `website`, and
+`address` (missing fields come back `null`/blank). Edit the `Lead` schema in
+`leads_common.py` to change what gets extracted — both scripts pick it up.
 
 ## Cost & scale — the honest version
 

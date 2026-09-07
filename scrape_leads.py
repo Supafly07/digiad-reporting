@@ -1,17 +1,17 @@
 """
-Scrape structured business leads from a web page using ScrapeGraphAI.
+Scrape structured business leads from a single web page using ScrapeGraphAI.
 
 Usage:
-    python scrape_leads.py <url> [--prompt "what to extract"] [--out leads.json]
+    python scrape_leads.py <url> [--prompt "what to extract"] [--out leads.json|leads.csv]
 
-Example:
-    python scrape_leads.py https://example.com/directory \
+Examples:
+    python scrape_leads.py https://example.com/directory
+    python scrape_leads.py https://example.com/members \
         --prompt "Extract every business listing" \
-        --out output/leads.json
+        --out output/leads.csv
 
-What it does:
-    ScrapeGraphAI loads the page (headless browser), then uses an LLM to pull
-    the fields defined in the `Lead` schema below into clean, structured JSON.
+Output format follows the --out extension: .csv writes a spreadsheet, anything
+else (or no --out) writes/prints JSON.
 
 Before you run it, read the "Responsible use" section in README.md. Scraping
 personal contact data has real legal limits (site Terms of Service, GDPR,
@@ -21,45 +21,11 @@ scrape, at a polite rate.
 """
 
 import argparse
-import json
-import os
-from pathlib import Path
-from typing import List, Optional
 
 from dotenv import load_dotenv
-from pydantic import BaseModel, Field
 from scrapegraphai.graphs import SmartScraperGraph
 
-
-class Lead(BaseModel):
-    """One business/contact record. Missing fields are left null."""
-
-    name: Optional[str] = Field(None, description="Person or business name")
-    company: Optional[str] = Field(None, description="Company or organization")
-    email: Optional[str] = Field(None, description="Contact email address")
-    phone: Optional[str] = Field(None, description="Contact phone number")
-    website: Optional[str] = Field(None, description="Website URL")
-    address: Optional[str] = Field(None, description="Physical address")
-
-
-class LeadList(BaseModel):
-    leads: List[Lead]
-
-
-def build_config() -> dict:
-    api_key = os.getenv("OPENAI_API_KEY")
-    if not api_key:
-        raise SystemExit(
-            "OPENAI_API_KEY is not set. Copy .env.example to .env and add your key."
-        )
-    return {
-        "llm": {
-            "api_key": api_key,
-            "model": os.getenv("SCRAPE_MODEL", "openai/gpt-4o-mini"),
-        },
-        "headless": True,
-        "verbose": True,
-    }
+from leads_common import LeadList, build_config, write_output
 
 
 def scrape(url: str, prompt: str) -> dict:
@@ -83,19 +49,11 @@ def main() -> None:
         "name, company, email, phone, website, and address.",
         help="Natural-language description of what to extract",
     )
-    parser.add_argument("--out", help="Write results to this JSON file")
+    parser.add_argument("--out", help="Write to this file (.json or .csv)")
     args = parser.parse_args()
 
     result = scrape(args.url, args.prompt)
-
-    text = json.dumps(result, indent=2, ensure_ascii=False)
-    if args.out:
-        out_path = Path(args.out)
-        out_path.parent.mkdir(parents=True, exist_ok=True)
-        out_path.write_text(text, encoding="utf-8")
-        print(f"Wrote results to {out_path}")
-    else:
-        print(text)
+    write_output(result, args.out)
 
 
 if __name__ == "__main__":
