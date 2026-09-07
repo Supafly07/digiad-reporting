@@ -1,0 +1,18 @@
+# ScrapeGraphAI + a pinned langchain 0.3.x stack.
+#
+# IMPORTANT: scrapegraphai's own dependency bounds are loose, so a bare
+# `pip install scrapegraphai` currently pulls in langchain 1.x and breaks on
+# import. The pins below are a verified, working combination — keep them
+# together and bump them as a set, not one at a time.
+scrapegraphai==1.40.0
+
+langchain==0.3.30
+langchain-core==0.3.86
+langchain-community==0.3.31
+langchain-openai==0.2.14
+langchain-aws==0.2.35
+langchain-mistralai==0.2.12
+langchain-ollama==0.3.10
+
+python-dotenv==1.2.3
+pydantic==2.13.5

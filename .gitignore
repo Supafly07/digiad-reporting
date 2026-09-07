@@ -1,0 +1,21 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Scrape output
+output/
+*.csv
+*.json
+!package.json
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
