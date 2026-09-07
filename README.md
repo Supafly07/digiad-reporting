@@ -5,6 +5,20 @@ Structured web-to-JSON lead scraping powered by
 page in a headless browser and uses an LLM to extract the fields you ask for
 into clean, structured data.
 
+## Easiest start on a Mac (no typing)
+
+1. Download this project: on the GitHub page click the green **`< > Code`**
+   button → **Download ZIP**, then double-click the ZIP to unzip it.
+2. Double-click **`setup_mac.command`**. The first time, Mac may say it's from an
+   unidentified developer — **right-click the file → Open → Open** to allow it.
+   It installs everything, then opens a text file. Paste your OpenAI key after
+   `OPENAI_API_KEY=`, press **⌘S**, and close the window.
+3. Double-click **`run_mac.command`**, type what leads you want, and press
+   Return. When it finishes, `leads.csv` opens in Numbers/Excel.
+
+That's it. Use `run_mac.command` any time after that. The rest of this README is
+the manual/command-line version.
+
 ## Setup
 
 ```bash
