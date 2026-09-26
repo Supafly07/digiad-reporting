@@ -75,12 +75,31 @@ CLIENT_JSON="${CLIENT_JSON//\\ / }"
 CLIENT_JSON="${CLIENT_JSON/#\~/$HOME}"
 [ -f "$CLIENT_JSON" ] || fail "Couldn't find a file at: $CLIENT_JSON"
 
-read -r -p "Google Cloud project ID: " PROJECT_ID
-[ -n "$PROJECT_ID" ] || fail "A project ID is required."
-
-read -r -s -p "Google Ads developer token (hidden as you type): " DEV_TOKEN
 echo ""
-[ -n "$DEV_TOKEN" ] || fail "A developer token is required."
+echo "Your project ID is in Google Cloud: click the project name at the top of the"
+echo "page and copy the value in the 'ID' column (e.g. google-ads-mcp-123456)."
+while :; do
+  read -r -p "Google Cloud project ID: " PROJECT_ID
+  PROJECT_ID="${PROJECT_ID//[[:space:]]/}"
+  if [ -z "$PROJECT_ID" ]; then
+    echo "  A project ID is required. Please try again."
+  elif [[ "$PROJECT_ID" == *googleusercontent.com* ]]; then
+    echo "  That's the OAuth Client ID, not the project ID. Please try again."
+  else
+    break
+  fi
+done
+
+echo ""
+echo "Your developer token is in Google Ads (manager account) -> Admin -> API Center."
+echo "Paste it with Cmd+V. Nothing will appear on screen - that's normal - then press Return."
+while :; do
+  read -r -s -p "Google Ads developer token: " DEV_TOKEN
+  echo ""
+  DEV_TOKEN="${DEV_TOKEN//[[:space:]]/}"
+  [ -n "$DEV_TOKEN" ] && break
+  echo "  Nothing was pasted. Copy the token again, then paste it with Cmd+V."
+done
 
 read -r -p "Manager (MCC) account ID, e.g. 123-456-7890 (press Return to skip): " LOGIN_CID
 LOGIN_CID="${LOGIN_CID//[^0-9]/}"
