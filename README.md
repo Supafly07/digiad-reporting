@@ -120,6 +120,36 @@ There is no "unlimited" free lead scraping. Realities to plan around:
   (search-engine-driven, multi-source) and `SmartScraperMultiGraph`. See the
   [docs](https://scrapegraph-ai.readthedocs.io/).
 
+## Google Ads MCP (connect Claude to Google Ads)
+
+`setup_google_ads_mcp.command` connects Claude Code and/or the Claude Desktop
+app to your Google Ads data using Google's official
+[Google Ads MCP server](https://github.com/googleads/google-ads-mcp). It is
+**read-only**: Claude can query and report on your accounts but can't create or
+change campaigns.
+
+Get these three things first:
+
+1. **Developer token** — in a Google Ads **manager** account go to
+   Admin → API Center. If Claude later reports *"only approved for use with
+   test accounts"*, apply for higher access there.
+2. **Google Cloud project ID** — create a project at
+   [console.cloud.google.com](https://console.cloud.google.com) and enable the
+   **Google Ads API** in it.
+3. **OAuth client JSON** — in that project, set up APIs & Services → OAuth
+   consent screen, then Credentials → Create credentials → OAuth client ID →
+   **Desktop app**, and download the JSON.
+
+Then double-click **`setup_google_ads_mcp.command`** (first time: right-click →
+Open → Open). It installs `pipx` and the Google Cloud CLI via
+[Homebrew](https://brew.sh), asks for the three items above (you can drag the
+JSON file into the window), opens a browser to sign in to Google, and registers
+the server with Claude. Fully quit and reopen Claude afterwards, then ask
+*"List my accessible Google Ads customers."*
+
+The developer token is saved in your Claude settings (`~/.claude.json` and/or
+the Claude Desktop config), never in this project folder.
+
 ## Responsible use
 
 Scraping contact/personal data is legally constrained. Before scraping a
