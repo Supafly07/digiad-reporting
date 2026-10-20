@@ -106,3 +106,9 @@ A single full human figure walking, seen from the side in profile, wearing simpl
 ## Not counted above
 
 - A schema probe with the prompt `test` (6 credits) and one first shoe generation whose download was blocked by the network policy (10 credits, same prompt as shoe attempt 1). Both are included in the credit total.
+
+## After generation
+
+All seven cut-outs were later converted to pure grayscale (transparency kept), because the
+accent blue must only come from the animation. The walking figure had a faint blue smear on
+the back shin (0.16% of its pixels); the others had no visible colour.

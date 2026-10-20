@@ -14,6 +14,13 @@ output/
 *.csv
 *.json
 !package.json
+!package-lock.json
+!tsconfig.json
+!public/*.json
+
+# Video template
+node_modules/
+out/stills/
 
 # OS / editor
 .DS_Store

@@ -1,0 +1,28 @@
+{
+  "name": "digiad-explainer-video",
+  "private": true,
+  "description": "Reusable Remotion template for calm, single-camera explainer shorts. One settings file per video.",
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "remotion render Explainer out/video.mp4",
+    "still": "remotion still Explainer"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@remotion/bundler": "^4.0.537",
+    "@remotion/cli": "^4.0.537",
+    "@remotion/fonts": "^4.0.537",
+    "@remotion/media-utils": "^4.0.537",
+    "@remotion/renderer": "^4.0.537",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.537"
+  },
+  "devDependencies": {
+    "@types/pngjs": "^6.0.5",
+    "@types/react": "^19.3.0",
+    "pngjs": "^7.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

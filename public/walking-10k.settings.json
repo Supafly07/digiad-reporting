@@ -1,0 +1,172 @@
+{
+	"title": "What Happens to Your Body When You Walk 10,000 Steps Every Day for 30 Days",
+	"width": 1080,
+	"height": 1920,
+	"fps": 60,
+	"audio": "narration.mp3",
+	"words": "narration.words.json",
+	"tailSeconds": 1,
+	"safeArea": {"top": 0.08, "bottom": 0.18},
+	"focus": [540, 864],
+	"style": {
+		"background": "#ffffff",
+		"ink": "#202429",
+		"accent": "#5d9cdb",
+		"font": "Inter",
+		"fontFile": "fonts/inter-latin-700-normal.woff2",
+		"labelSize": 50,
+		"labelTracking": 0.3
+	},
+	"grid": {
+		"spacing": 26,
+		"dot": 1.5,
+		"opacity": 0.17,
+		"far": {"parallax": 0.5, "spacing": 40, "dot": 2.0, "opacity": 0.09, "blur": 1.2}
+	},
+	"fade": {"dur": 0.5, "scale": 0.96, "blur": 10},
+
+	"camera": {
+		"start": {"x": 834.8, "y": 1403, "zoom": 4.2},
+		"moves": [
+			{"note": "slow push on the shoe", "at": 0, "dur": 3.6, "to": {"x": 834.8, "y": 1400, "zoom": 4.6}},
+			{"note": "pull back to the legs", "at": 2.95, "dur": 1.65, "to": {"x": 581.6, "y": 1073.3, "zoom": 1.38}},
+			{"note": "drift on legs", "at": 4.8, "dur": 2.2, "to": {"x": 586, "y": 1066, "zoom": 1.42}},
+			{"note": "make room for the lens", "at": 6.55, "dur": 1.4, "to": {"x": 665.5, "y": 1073.5, "zoom": 1.15}},
+			{"note": "push into the lens", "at": 8.45, "dur": 1.7, "to": {"x": 950, "y": 1010, "zoom": 3.05}},
+			{"note": "drift in lens", "at": 9.8, "dur": 1.0, "to": {"x": 950, "y": 1010, "zoom": 3.12}},
+			{"note": "ease back so lens and vessel share the frame", "at": 10.1, "dur": 0.8, "to": {"x": 743.5, "y": 1010, "zoom": 1.4}},
+			{"note": "glide into the vessel", "at": 10.95, "dur": 1.05, "to": {"x": 548, "y": 942, "zoom": 2.75}},
+			{"note": "drift on vessel", "at": 11.8, "dur": 2.2, "to": {"x": 548, "y": 942, "zoom": 2.85}},
+			{"note": "travel up to the heart", "at": 13.85, "dur": 1.5, "to": {"x": 548, "y": 638.5, "zoom": 2.85}},
+			{"note": "drift on heart", "at": 15.2, "dur": 2.5, "to": {"x": 548, "y": 638.5, "zoom": 2.95}},
+			{"note": "ease back so heart and brain share the frame", "at": 17.6, "dur": 0.95, "to": {"x": 548, "y": 488.5, "zoom": 2.0}},
+			{"note": "rise into the brain", "at": 18.45, "dur": 1.0, "to": {"x": 548, "y": 262, "zoom": 2.95}},
+			{"note": "drift on brain", "at": 19.3, "dur": 2.2, "to": {"x": 548, "y": 262, "zoom": 3.05}},
+			{"note": "pull back to the walker", "at": 21.55, "dur": 1.5, "to": {"x": 568.5, "y": 822, "zoom": 1.06}},
+			{"note": "drift on walker", "at": 23.0, "dur": 2.0, "to": {"x": 568.5, "y": 822, "zoom": 1.09}},
+			{"note": "back to the shoe (loops to the first frame)", "at": 25.2, "dur": 2.3, "to": {"x": 834.8, "y": 1403, "zoom": 4.2}}
+		]
+	},
+
+	"pictures": [
+		{
+			"id": "walker", "src": "images/07_walking_figure.png",
+			"x": 0, "y": 0, "w": 1118, "h": 1687.8, "content": [0.183, 0.116, 0.834, 0.858],
+			"note": "the map: the shoe sits on its front foot, the brain on its head",
+			"show": [{"in": 22.8, "inDur": 0.6, "out": 25.05, "outDur": 0.45}]
+		},
+		{
+			"id": "legs", "src": "images/02_legs_striding.png",
+			"x": 189.0, "y": 531.6, "w": 780.4, "h": 1178.2, "content": [0.054, 0.141, 0.952, 0.778],
+			"note": "front shoe lined up on the shoe picture",
+			"show": [{"in": 4.5, "out": 8.4, "outDur": 0.4}]
+		},
+		{
+			"id": "vessel", "src": "images/04_blood_vessel.png",
+			"x": 328.2, "y": 797.6, "w": 440, "h": 291.5, "content": [0.135, 0.317, 0.864, 0.674],
+			"show": [{"in": 10.75, "out": 14.45, "outDur": 0.45}]
+		},
+		{
+			"id": "heart", "src": "images/05_heart.png",
+			"x": 287.5, "y": 392.8, "w": 520, "h": 520, "content": [0.271, 0.091, 0.731, 0.854],
+			"show": [{"in": 14.85, "out": 18.1, "outDur": 0.5}],
+			"pulse": {"from": {"word": 39, "say": "daily"}, "to": 17.9, "bpm": 66, "amount": 0.022}
+		},
+		{
+			"id": "brain", "src": "images/06_brain.png",
+			"x": 338.0, "y": 50.1, "w": 418.4, "h": 418.4, "content": [0.143, 0.215, 0.86, 0.796],
+			"note": "shrinks into the walker's head on the pull-back",
+			"show": [{"in": 18.3, "out": 22.35, "outDur": 0.6, "outScale": 0.4}]
+		},
+		{
+			"id": "shoe", "src": "images/01_walking_shoe.png",
+			"x": 705.5, "y": 1318.7, "w": 260.6, "h": 172.6, "content": [0.1238, 0.2242, 0.869, 0.7524],
+			"show": [
+				{"in": null, "out": 4.55},
+				{"in": 25.0, "inDur": 0.6, "out": null}
+			]
+		}
+	],
+
+	"magnifiers": [
+		{
+			"id": "thigh",
+			"note": "grows out of the front thigh on the legs picture",
+			"source": [657.2, 979.3], "sourceRadius": 40,
+			"center": [950, 1010], "radius": 150,
+			"inside": {"src": "images/03_thigh_muscle.png", "x": 636.4, "y": 623.5, "w": 640, "h": 966.2},
+			"ringAt": {"word": 18, "say": "Those"},
+			"growAt": {"word": 19, "say": "working"},
+			"growDur": 0.8,
+			"linksOut": 8.45,
+			"out": 10.55
+		}
+	],
+
+	"lights": [
+		{"note": "the step rolls heel to toe", "on": "shoe", "at": 1.0, "dur": 1.2, "size": 34,
+			"path": [[0.15, 0.615], [0.25, 0.63], [0.35, 0.645], [0.45, 0.655], [0.55, 0.66], [0.65, 0.66], [0.75, 0.655], [0.82, 0.645], [0.86, 0.62]]},
+
+		{"note": "front thigh", "on": "legs", "at": {"word": 11, "say": "squeezes"}, "dur": 1.0, "size": 30,
+			"path": [[0.55, 0.315], [0.58, 0.36], [0.63, 0.40], [0.655, 0.44]]},
+		{"note": "back thigh", "on": "legs", "at": {"word": 11, "say": "squeezes", "offset": 0.08}, "dur": 1.0, "size": 30,
+			"path": [[0.395, 0.32], [0.40, 0.37], [0.38, 0.41], [0.345, 0.45]]},
+
+		{"note": "sugar drawn into the muscle", "on": "lens:thigh", "at": {"word": 22, "say": "sugar"}, "dur": 1.3, "size": 30,
+			"path": [[0.48, 0.24], [0.485, 0.32], [0.49, 0.40], [0.492, 0.48], [0.495, 0.56]]},
+		{"on": "lens:thigh", "at": {"word": 22, "say": "sugar", "offset": 0.15}, "dur": 1.3, "size": 26,
+			"path": [[0.37, 0.26], [0.357, 0.33], [0.35, 0.40], [0.35, 0.47], [0.355, 0.54]]},
+		{"on": "lens:thigh", "at": {"word": 22, "say": "sugar", "offset": 0.3}, "dur": 1.3, "size": 26,
+			"path": [[0.61, 0.27], [0.62, 0.34], [0.625, 0.41], [0.62, 0.48], [0.61, 0.55]]},
+
+		{"note": "steady flow toward the heart", "on": "vessel", "at": {"word": 29, "say": "walk"}, "dur": 1.8, "size": 26, "trail": 0.16,
+			"repeat": {"count": 5, "every": 0.6},
+			"path": [[0.79, 0.495], [0.65, 0.50], [0.50, 0.505], [0.35, 0.50], [0.20, 0.49]]},
+		{"on": "vessel", "at": {"word": 29, "say": "walk", "offset": 0.3}, "dur": 1.8, "size": 22, "trail": 0.16,
+			"repeat": {"count": 4, "every": 0.6},
+			"path": [[0.79, 0.445], [0.65, 0.45], [0.50, 0.455], [0.35, 0.45], [0.20, 0.44]]},
+		{"on": "vessel", "at": {"word": 29, "say": "walk", "offset": 0.45}, "dur": 1.8, "size": 22, "trail": 0.16,
+			"repeat": {"count": 4, "every": 0.6},
+			"path": [[0.79, 0.545], [0.65, 0.55], [0.50, 0.555], [0.35, 0.55], [0.20, 0.54]]},
+
+		{"note": "each beat pushes blood out", "on": "heart", "at": {"word": 43, "say": "grows"}, "dur": 1.0, "size": 28,
+			"path": [[0.45, 0.42], [0.43, 0.33], [0.435, 0.25], [0.47, 0.19], [0.53, 0.175], [0.58, 0.20], [0.61, 0.26]]},
+		{"on": "heart", "at": {"word": 43, "say": "grows", "offset": 0.1}, "dur": 1.0, "size": 24,
+			"path": [[0.555, 0.43], [0.545, 0.50], [0.535, 0.57], [0.535, 0.64], [0.545, 0.71], [0.56, 0.77]]},
+		{"on": "heart", "at": {"word": 43, "say": "grows", "offset": 0.1}, "dur": 1.0, "size": 24,
+			"path": [[0.40, 0.44], [0.38, 0.52], [0.365, 0.60], [0.36, 0.68]]},
+
+		{"note": "a gentle lift", "on": "brain", "at": {"word": 52, "say": "gentle"}, "dur": 1.1, "size": 28,
+			"path": [[0.345, 0.52], [0.41, 0.475], [0.49, 0.46], [0.56, 0.445], [0.63, 0.43], [0.70, 0.40]]},
+		{"on": "brain", "at": {"word": 52, "say": "gentle", "offset": 0.12}, "dur": 1.1, "size": 26,
+			"path": [[0.22, 0.45], [0.26, 0.36], [0.33, 0.31], [0.42, 0.28], [0.52, 0.27], [0.62, 0.29], [0.71, 0.33], [0.78, 0.40]]},
+
+		{"note": "it all adds up, foot to head", "on": "walker", "at": {"word": 59, "say": "changes"}, "dur": 1.4, "size": 24, "trail": 0.18,
+			"path": [[0.735, 0.83], [0.70, 0.79], [0.675, 0.735], [0.65, 0.69], [0.625, 0.655], [0.565, 0.58], [0.51, 0.51], [0.47, 0.44], [0.48, 0.34], [0.485, 0.245], [0.49, 0.165]]},
+
+		{"note": "lacing up", "on": "shoe", "at": {"word": 64, "say": "lace"}, "dur": 1.0, "size": 30,
+			"path": [[0.66, 0.468], [0.615, 0.445], [0.565, 0.415], [0.515, 0.385], [0.47, 0.355], [0.435, 0.325]]}
+	],
+
+	"labels": [
+		{"text": "ONE STEP", "anchor": [834.8, 1448.6], "offset": [0, 110],
+			"in": {"word": 2, "say": "one"}, "out": {"word": 5, "say": "now", "offset": -0.25}},
+		{"text": "{n} STEPS", "anchor": [834.8, 1448.6], "offset": [0, 110],
+			"in": {"word": 7, "say": "ten", "offset": -0.1}, "out": 3.5,
+			"count": {"from": 1, "to": 10000, "at": {"word": 7, "say": "ten", "offset": -0.1}, "dur": 1.0}},
+		{"text": "LEG MUSCLES", "anchor": [581.6, 1448.2], "offset": [0, 95],
+			"in": {"word": 14, "say": "muscles"}, "out": {"word": 18, "say": "Those", "offset": -0.3}},
+		{"text": "MUSCLE", "anchor": [950, 1160], "offset": [0, 85],
+			"in": {"word": 20, "say": "muscles"}, "out": {"word": 26, "say": "blood", "edge": "end", "offset": -0.2}},
+		{"text": "BLOOD SUGAR", "anchor": [548, 994], "offset": [0, 100],
+			"in": {"word": 35, "say": "blood", "offset": -0.15}, "out": 13.9},
+		{"text": "HEART", "anchor": [548, 837], "offset": [0, 80],
+			"in": {"word": 42, "say": "heart"}, "out": 17.55},
+		{"text": "MOOD", "anchor": [548, 383], "offset": [0, 95],
+			"in": {"word": 50, "say": "mood"}, "out": {"word": 54, "say": "After", "offset": -0.9}},
+		{"text": "DAY 30", "anchor": [868, 410],
+			"in": {"word": 56, "say": "days", "offset": 0.15}, "out": {"word": 61, "say": "up", "edge": "end"}},
+		{"text": "DAY 1", "anchor": [834.8, 1448.6], "offset": [0, 110],
+			"in": {"word": 69, "say": "first"}, "out": {"word": 71, "say": "again", "edge": "end", "offset": 0.25}}
+	]
+}

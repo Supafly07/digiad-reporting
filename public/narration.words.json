@@ -1,0 +1,516 @@
+{
+ "audio": "narration.mp3",
+ "voice": {
+  "provider": "ElevenLabs",
+  "voice": "Quentin - Narrator and Educator",
+  "voice_id": "Aa6nEBJJMKJwJkCx8VU2",
+  "model": "eleven_multilingual_v2"
+ },
+ "duration": 28.47,
+ "words": [
+  {
+   "text": "This",
+   "start": 0,
+   "end": 0.232,
+   "i": 0,
+   "sentence": 0
+  },
+  {
+   "text": "is",
+   "start": 0.29,
+   "end": 0.383,
+   "i": 1,
+   "sentence": 0
+  },
+  {
+   "text": "one",
+   "start": 0.453,
+   "end": 0.627,
+   "i": 2,
+   "sentence": 0
+  },
+  {
+   "text": "step",
+   "start": 0.662,
+   "end": 0.94,
+   "i": 3,
+   "sentence": 0
+  },
+  {
+   "text": "\u2014",
+   "start": 1.138,
+   "end": 1.184,
+   "i": 4,
+   "sentence": 0
+  },
+  {
+   "text": "now",
+   "start": 1.834,
+   "end": 1.997,
+   "i": 5,
+   "sentence": 0
+  },
+  {
+   "text": "times",
+   "start": 2.067,
+   "end": 2.368,
+   "i": 6,
+   "sentence": 0
+  },
+  {
+   "text": "ten",
+   "start": 2.426,
+   "end": 2.589,
+   "i": 7,
+   "sentence": 0
+  },
+  {
+   "text": "thousand.",
+   "start": 2.647,
+   "end": 3.355,
+   "i": 8,
+   "sentence": 0
+  },
+  {
+   "text": "Each",
+   "start": 4.11,
+   "end": 4.307,
+   "i": 9,
+   "sentence": 1
+  },
+  {
+   "text": "step",
+   "start": 4.354,
+   "end": 4.609,
+   "i": 10,
+   "sentence": 1
+  },
+  {
+   "text": "squeezes",
+   "start": 4.679,
+   "end": 5.108,
+   "i": 11,
+   "sentence": 1
+  },
+  {
+   "text": "the",
+   "start": 5.166,
+   "end": 5.236,
+   "i": 12,
+   "sentence": 1
+  },
+  {
+   "text": "big",
+   "start": 5.294,
+   "end": 5.445,
+   "i": 13,
+   "sentence": 1
+  },
+  {
+   "text": "muscles",
+   "start": 5.515,
+   "end": 5.886,
+   "i": 14,
+   "sentence": 1
+  },
+  {
+   "text": "in",
+   "start": 5.933,
+   "end": 6.002,
+   "i": 15,
+   "sentence": 1
+  },
+  {
+   "text": "your",
+   "start": 6.06,
+   "end": 6.177,
+   "i": 16,
+   "sentence": 1
+  },
+  {
+   "text": "legs.",
+   "start": 6.235,
+   "end": 6.803,
+   "i": 17,
+   "sentence": 1
+  },
+  {
+   "text": "Those",
+   "start": 7.454,
+   "end": 7.732,
+   "i": 18,
+   "sentence": 2
+  },
+  {
+   "text": "working",
+   "start": 7.779,
+   "end": 8.115,
+   "i": 19,
+   "sentence": 2
+  },
+  {
+   "text": "muscles",
+   "start": 8.185,
+   "end": 8.58,
+   "i": 20,
+   "sentence": 2
+  },
+  {
+   "text": "pull",
+   "start": 8.649,
+   "end": 8.858,
+   "i": 21,
+   "sentence": 2
+  },
+  {
+   "text": "sugar",
+   "start": 8.928,
+   "end": 9.218,
+   "i": 22,
+   "sentence": 2
+  },
+  {
+   "text": "out",
+   "start": 9.288,
+   "end": 9.416,
+   "i": 23,
+   "sentence": 2
+  },
+  {
+   "text": "of",
+   "start": 9.451,
+   "end": 9.509,
+   "i": 24,
+   "sentence": 2
+  },
+  {
+   "text": "your",
+   "start": 9.555,
+   "end": 9.659,
+   "i": 25,
+   "sentence": 2
+  },
+  {
+   "text": "blood.",
+   "start": 9.706,
+   "end": 10.228,
+   "i": 26,
+   "sentence": 2
+  },
+  {
+   "text": "So",
+   "start": 10.983,
+   "end": 11.122,
+   "i": 27,
+   "sentence": 3
+  },
+  {
+   "text": "a",
+   "start": 11.192,
+   "end": 11.227,
+   "i": 28,
+   "sentence": 3
+  },
+  {
+   "text": "walk",
+   "start": 11.285,
+   "end": 11.505,
+   "i": 29,
+   "sentence": 3
+  },
+  {
+   "text": "after",
+   "start": 11.575,
+   "end": 11.796,
+   "i": 30,
+   "sentence": 3
+  },
+  {
+   "text": "meals",
+   "start": 11.865,
+   "end": 12.19,
+   "i": 31,
+   "sentence": 3
+  },
+  {
+   "text": "helps",
+   "start": 12.249,
+   "end": 12.492,
+   "i": 32,
+   "sentence": 3
+  },
+  {
+   "text": "steady",
+   "start": 12.539,
+   "end": 12.829,
+   "i": 33,
+   "sentence": 3
+  },
+  {
+   "text": "your",
+   "start": 12.875,
+   "end": 12.98,
+   "i": 34,
+   "sentence": 3
+  },
+  {
+   "text": "blood",
+   "start": 13.026,
+   "end": 13.235,
+   "i": 35,
+   "sentence": 3
+  },
+  {
+   "text": "sugar.",
+   "start": 13.27,
+   "end": 13.769,
+   "i": 36,
+   "sentence": 3
+  },
+  {
+   "text": "Repeat",
+   "start": 14.652,
+   "end": 15.012,
+   "i": 37,
+   "sentence": 4
+  },
+  {
+   "text": "it",
+   "start": 15.058,
+   "end": 15.139,
+   "i": 38,
+   "sentence": 4
+  },
+  {
+   "text": "daily,",
+   "start": 15.209,
+   "end": 15.755,
+   "i": 39,
+   "sentence": 4
+  },
+  {
+   "text": "and",
+   "start": 16.057,
+   "end": 16.208,
+   "i": 40,
+   "sentence": 4
+  },
+  {
+   "text": "your",
+   "start": 16.277,
+   "end": 16.405,
+   "i": 41,
+   "sentence": 4
+  },
+  {
+   "text": "heart",
+   "start": 16.463,
+   "end": 16.649,
+   "i": 42,
+   "sentence": 4
+  },
+  {
+   "text": "grows",
+   "start": 16.695,
+   "end": 16.939,
+   "i": 43,
+   "sentence": 4
+  },
+  {
+   "text": "stronger.",
+   "start": 16.985,
+   "end": 17.635,
+   "i": 44,
+   "sentence": 4
+  },
+  {
+   "text": "Every",
+   "start": 18.669,
+   "end": 19.005,
+   "i": 45,
+   "sentence": 5
+  },
+  {
+   "text": "walk",
+   "start": 19.075,
+   "end": 19.4,
+   "i": 46,
+   "sentence": 5
+  },
+  {
+   "text": "also",
+   "start": 19.621,
+   "end": 20.004,
+   "i": 47,
+   "sentence": 5
+  },
+  {
+   "text": "gives",
+   "start": 20.074,
+   "end": 20.259,
+   "i": 48,
+   "sentence": 5
+  },
+  {
+   "text": "your",
+   "start": 20.294,
+   "end": 20.399,
+   "i": 49,
+   "sentence": 5
+  },
+  {
+   "text": "mood",
+   "start": 20.445,
+   "end": 20.619,
+   "i": 50,
+   "sentence": 5
+  },
+  {
+   "text": "a",
+   "start": 20.654,
+   "end": 20.689,
+   "i": 51,
+   "sentence": 5
+  },
+  {
+   "text": "gentle",
+   "start": 20.759,
+   "end": 21.06,
+   "i": 52,
+   "sentence": 5
+  },
+  {
+   "text": "lift.",
+   "start": 21.095,
+   "end": 21.606,
+   "i": 53,
+   "sentence": 5
+  },
+  {
+   "text": "After",
+   "start": 22.361,
+   "end": 22.639,
+   "i": 54,
+   "sentence": 6
+  },
+  {
+   "text": "thirty",
+   "start": 22.686,
+   "end": 22.918,
+   "i": 55,
+   "sentence": 6
+  },
+  {
+   "text": "days,",
+   "start": 22.988,
+   "end": 23.324,
+   "i": 56,
+   "sentence": 6
+  },
+  {
+   "text": "these",
+   "start": 23.359,
+   "end": 23.545,
+   "i": 57,
+   "sentence": 6
+  },
+  {
+   "text": "small",
+   "start": 23.58,
+   "end": 23.835,
+   "i": 58,
+   "sentence": 6
+  },
+  {
+   "text": "changes",
+   "start": 23.905,
+   "end": 24.276,
+   "i": 59,
+   "sentence": 6
+  },
+  {
+   "text": "add",
+   "start": 24.334,
+   "end": 24.485,
+   "i": 60,
+   "sentence": 6
+  },
+  {
+   "text": "up.",
+   "start": 24.555,
+   "end": 24.892,
+   "i": 61,
+   "sentence": 6
+  },
+  {
+   "text": "Then",
+   "start": 25.542,
+   "end": 25.728,
+   "i": 62,
+   "sentence": 7
+  },
+  {
+   "text": "you",
+   "start": 25.774,
+   "end": 25.855,
+   "i": 63,
+   "sentence": 7
+  },
+  {
+   "text": "lace",
+   "start": 25.925,
+   "end": 26.157,
+   "i": 64,
+   "sentence": 7
+  },
+  {
+   "text": "up,",
+   "start": 26.215,
+   "end": 26.587,
+   "i": 65,
+   "sentence": 7
+  },
+  {
+   "text": "and",
+   "start": 26.749,
+   "end": 26.9,
+   "i": 66,
+   "sentence": 7
+  },
+  {
+   "text": "take",
+   "start": 26.947,
+   "end": 27.121,
+   "i": 67,
+   "sentence": 7
+  },
+  {
+   "text": "the",
+   "start": 27.144,
+   "end": 27.214,
+   "i": 68,
+   "sentence": 7
+  },
+  {
+   "text": "first",
+   "start": 27.283,
+   "end": 27.516,
+   "i": 69,
+   "sentence": 7
+  },
+  {
+   "text": "step",
+   "start": 27.55,
+   "end": 27.771,
+   "i": 70,
+   "sentence": 7
+  },
+  {
+   "text": "again.",
+   "start": 27.829,
+   "end": 28.468,
+   "i": 71,
+   "sentence": 7
+  }
+ ]
+}
