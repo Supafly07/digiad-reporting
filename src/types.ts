@@ -121,7 +121,8 @@ export type Label = {
 	offset?: Vec; // screen px from the anchor
 	in: Time;
 	out: Time;
-	count?: {from: number; to: number; at: Time; dur: number; decimals?: number};
+	// grouping: false for years (1965, not 1,965).
+	count?: {from: number; to: number; at: Time; dur: number; decimals?: number; grouping?: boolean};
 	size?: number;
 	// Smaller, lighter second line under the main text.
 	sub?: string;

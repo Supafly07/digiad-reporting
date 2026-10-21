@@ -321,8 +321,8 @@ const DiagramView: React.FC<{d: Diagram; time: number; s: Settings; words: Word[
 	);
 };
 
-const formatCount = (n: number, decimals = 0) =>
-	n.toLocaleString('en-US', {minimumFractionDigits: decimals, maximumFractionDigits: decimals});
+const formatCount = (n: number, decimals = 0, grouping = true) =>
+	n.toLocaleString('en-US', {minimumFractionDigits: decimals, maximumFractionDigits: decimals, useGrouping: grouping});
 
 export const Explainer: React.FC<ExplainerProps> = ({settings, words, offsetFrames = 0}) => {
 	const frame = useCurrentFrame();
@@ -442,9 +442,9 @@ export const Explainer: React.FC<ExplainerProps> = ({settings, words, offsetFram
 				let text = l.text;
 				if (l.count) {
 					const p = smoother((time - resolveTime(l.count.at, words)) / l.count.dur);
-					text = text.replace('{n}', formatCount(lerp(l.count.from, l.count.to, clamp01(p)), l.count.decimals));
+					text = text.replace('{n}', formatCount(lerp(l.count.from, l.count.to, clamp01(p)), l.count.decimals, l.count.grouping));
 				}
-				const half = labelHalfWidth(l.text.replace('{n}', formatCount(l.count?.to ?? 0, l.count?.decimals)), size, s);
+				const half = labelHalfWidth(l.text.replace('{n}', formatCount(l.count?.to ?? 0, l.count?.decimals, l.count?.grouping)), size, s);
 				const sx = Math.min(width - 40 - half, Math.max(40 + half, sx0 + (l.offset?.[0] ?? 0)));
 				return (
 					<div

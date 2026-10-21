@@ -149,15 +149,20 @@ def label(text, anchor, a, b, off=None, size=None, count=None, sub=None):
         l["size"] = size
     if count:
         l["count"] = count
+        # A counting label appears as it starts counting, never sitting at its starting number.
+        if t(count["at"]) - t(a) > 0.2:
+            l["in"] = shift(count["at"], -0.15)
     if sub:
         l["sub"] = sub
     S["labels"].append(l)
 
 
-def count(frm, to, a, dur=1.0, decimals=None):
+def count(frm, to, a, dur=1.0, decimals=None, grouping=True):
     c = {"from": frm, "to": to, "at": a, "dur": dur}
     if decimals:
         c["decimals"] = decimals
+    if not grouping:
+        c["grouping"] = False
     return c
 
 
@@ -220,7 +225,7 @@ def cam(a, dur, x, y, z, note=None, sid=None):
         shot(sid, camera=note)
 
 
-def trail(prefix, spacing=300, h=130, opacity=0.5, clear=420):
+def trail(prefix, spacing=300, h=130, opacity=0.5, clear=250):
     """Footprints walking along the camera's last move (a long trip between parts of the page), each one
     fading in just before the camera passes over it and out just after, so the trip is never an empty page."""
     m1, m0 = S["moves"][-1], S["moves"][-2]
@@ -242,7 +247,7 @@ def trail(prefix, spacing=300, h=130, opacity=0.5, clear=420):
         tk = float(np.interp(dist / L, e, u)) * dur
         c = p0 + d * dist + side * (32 if i % 2 else -32)
         pic(f"{prefix}{k}", "21_footprint", float(c[0]), float(c[1]), h=h, small=True, rotate=round(90 + ang, 1),
-            flip=bool(i % 2), opacity=opacity, decor=True, show=[win(shift(a, tk - 0.6), shift(a, tk + 0.5), ind=0.3, outd=0.7)])
+            flip=bool(i % 2), opacity=opacity, decor=True, show=[win(shift(a, tk - 0.8), shift(a, tk + 0.7), ind=0.3, outd=0.7)])
         k += 1
 
 
@@ -270,7 +275,7 @@ shot("S001", "The step counter fades in on the dotted page; “10,000 STEPS A DA
 label("10,000 STEPS A DAY", (0, pb[1] - 60), at("S001", "ten"), at("S002", off=-0.3))
 light("pedo", "rim", at("S002", "step"), 1.8, size=34)
 shot("S002", "A soft light travels once around the dial; “1965” counts up under it.")
-label("{n}", (0, pb[3] + 70), at("S002", "Japan"), at("S004", off=-0.3), count=count(1900, 1965, at("S002", "1965"), 1.0))
+label("{n}", (0, pb[3] + 70), at("S002", "Japan"), at("S004", off=-0.3), count=count(1900, 1965, at("S002", "1965"), 1.0, grouping=False))
 label("“10,000-STEP METER”", (0, pb[1] - 60), at("S003", "meant"), at("S004", off=-0.35))
 shot("S003", "“10,000-STEP METER” fades in above the counter.")
 label("NEVER TESTED", (0, pb[1] - 60), at("S004", "tested"), at("S006", off=-0.3))
@@ -362,7 +367,7 @@ shot("S027", "The last walker fades as the camera travels on; the legs fade in a
 # =====================================================================
 B = 3000
 pic("legs", "02_legs_striding", B, 0, h=760,
-    show=[win(at("S027", "step", 0.5), at("S034", "veins")), win(at("S039", off=-0.2), at("S041", off=0.9))])
+    show=[win(at("S027", "step", 0.5), at("S034", "veins")), win(at("S039", off=0.05), at("S041", off=0.9))])
 lb = cbox("legs")
 label("ONE STEP", (B, lb[1] - 60), at("S028", "step"), at("S029", off=-0.2))
 light("legs", "front_leg_down", at("S028", "step", 0.2), 1.6)
@@ -481,29 +486,31 @@ shot("S050", "The vessel returns beside the fibers; lights flow from blood into 
 C2 = (C, 980)
 cam(at("S051", off=-0.3), 2.0, C, 980, 1.0, "moves down the page to a comparison", "S051")
 label("TIMING", (C, C2[1] - 330), at("S051", "timing"), at("S052", "Zealand", -0.35))
-shot("S051", "“TIMING” fades in over an empty part of the page.")
+shot("S051", "“TIMING” fades in; two empty boxes draw themselves side by side.")
 boxL, boxR = -420, 420
-diagram("plans", C, C2[1], [win(at("S052", "two", -0.1), at("S059", off=0.6))], [
-    stroke([(boxL - 320, -200), (boxL + 320, -200), (boxL + 320, 220), (boxL - 320, 220), (boxL - 320, -200)], at("S052", "two"), 1.0, px=2.2, opacity=0.6),
-    stroke([(boxR - 320, -200), (boxR + 320, -200), (boxR + 320, 220), (boxR - 320, 220), (boxR - 320, -200)], at("S052", "plans"), 1.0, px=2.2, opacity=0.6),
+diagram("plans", C, C2[1], [win(at("S051", "timing", 0.2), at("S059", off=0.6))], [
+    stroke([(boxL - 320, -200), (boxL + 320, -200), (boxL + 320, 220), (boxL - 320, 220), (boxL - 320, -200)], at("S051", "timing", 0.3), 1.0, px=2.2, opacity=0.6),
+    stroke([(boxR - 320, -200), (boxR + 320, -200), (boxR + 320, 220), (boxR - 320, 220), (boxR - 320, -200)], at("S051", "timing", 0.6), 1.0, px=2.2, opacity=0.6),
 ])
 label("NEW ZEALAND STUDY", (C, C2[1] - 330), at("S052", "Zealand"), at("S053", off=-0.2), sub="TYPE 2 DIABETES")
-shot("S052", "“NEW ZEALAND STUDY / TYPE 2 DIABETES”; two empty boxes draw themselves side by side.")
-pic("walkerP1", "07_walking_figure", C + boxL, C2[1] + 5, h=200, small=True, show=[win(at("S053", "walk"), at("S056", off=-0.2))])
-diagram("plan1bar", C + boxL, C2[1] + 150, [win(at("S053", "day"), at("S056", off=-0.2))], [
+light("diagram:plans", [(boxL - 320, -200), (boxL + 320, -200), (boxL + 320, 220), (boxL - 320, 220), (boxL - 320, -200)], at("S052", "plans"), 1.8, size=26)
+light("diagram:plans", [(boxR - 320, -200), (boxR + 320, -200), (boxR + 320, 220), (boxR - 320, 220), (boxR - 320, -200)], at("S052", "plans", 0.3), 1.8, size=26)
+shot("S052", "“NEW ZEALAND STUDY / TYPE 2 DIABETES” above the two boxes; on “plans” a light runs round each box.")
+pic("walkerP1", "07_walking_figure", C + boxL, C2[1] + 5, h=200, small=True, show=[win(at("S053", "walk"), at("S056", "lowered", -0.3))])
+diagram("plan1bar", C + boxL, C2[1] + 150, [win(at("S053", "day"), at("S056", "lowered", -0.3))], [
     stroke([(-240, 0), (240, 0)], at("S053", "day"), 1.2, width=22, cap="butt", opacity=0.7)])
-label("30 MIN", (C + boxL, C2[1] - 165), at("S053", "thirty-minute"), at("S056", off=-0.2), size=36, sub="ONCE A DAY")
+label("30 MIN", (C + boxL, C2[1] - 165), at("S053", "thirty-minute"), at("S056", "lowered", -0.3), size=36, sub="ONCE A DAY")
 shot("S053", "Left box: “30 MIN / ONCE A DAY”, a small walker, and one long bar.")
 for k in range(3):
     pic(f"plateP{k}", "12_meal_plate", C + boxR - 170 + k * 170, C2[1] - 10, w=140, small=True,
-        show=[win(at("S054", "each", 0.2 * k), at("S056", off=-0.2))])
-diagram("plan2bars", C + boxR, C2[1] + 150, [win(at("S054", "meal"), at("S056", off=-0.2))], [
+        show=[win(at("S054", "each", 0.2 * k), at("S056", "lowered", -0.3))])
+diagram("plan2bars", C + boxR, C2[1] + 150, [win(at("S054", "meal"), at("S056", "lowered", -0.3))], [
     stroke([(-240 + k * 170, 0), (-100 + k * 170, 0)], at("S054", "meal", 0.15 * k), 0.6, width=22, cap="butt", opacity=0.7) for k in range(3)])
-label("10 MIN × 3", (C + boxR, C2[1] - 165), at("S054", "ten-minute"), at("S056", off=-0.2), size=36, sub="AFTER EACH MEAL")
+label("10 MIN × 3", (C + boxR, C2[1] - 165), at("S054", "ten-minute"), at("S056", "lowered", -0.3), size=36, sub="AFTER EACH MEAL")
 shot("S054", "Right box: three small plates appear, each followed by a short bar; “10 MIN × 3 / AFTER EACH MEAL”.")
 light("diagram:plan1bar", [(-240, 0), (240, 0)], at("S055", "Same"), 1.0, size=26)
 light("diagram:plan2bars", [(-240, 0), (240, 0)], at("S055", "Same", 0.1), 1.0, size=26)
-label("SAME 30 MINUTES", (C, C2[1] + 300), at("S055", "total"), at("S056", off=-0.2), size=34)
+label("SAME 30 MINUTES", (C, C2[1] + 300), at("S055", "total"), at("S056", "lowered", -0.3), size=34)
 shot("S055", "Lights run along both bars; “SAME 30 MINUTES” under the boxes.")
 barM, barD = boxR - 80, boxR + 130
 diagram("sugarBars", C, C2[1] + 190, [win(at("S056", "lowered", -0.1), at("S059", off=0.6))], [
@@ -661,7 +668,7 @@ label("NEW MEMORIES", (D + 420, 2600 + 300), at("S082", "memories"), at("S083", 
 light("lens:hippoLens", "curve", at("S082", "form"), 1.3, repeat=(2, 0.6))
 shot("S082", "Seahorse fades; lights travel along the hippocampus; “NEW MEMORIES”.")
 E2 = (D, 3520)
-cam(at("S083", off=-0.3), 1.8, D, 3480, 1.0, "moves down the page", "S083")
+cam(at("S083", off=-0.3), 1.8, D, 3430, 1.0, "moves down the page", "S083")
 pic("hippoC", "16_hippocampus", D, 3440, w=420, show=[win(at("S083", off=0.3), at("S084", "walked", -0.1))],
     grow=[{"at": at("S083", "shrinks"), "dur": 2.0, "to": 0.88}])
 label("SHRINKS WITH AGE", (D, 3440 + 285), at("S083", "shrinks"), at("S084", "walked", -0.1))
@@ -684,10 +691,10 @@ label("≈ −{n}%", (D + 450, 3600 + 220), at("S088", "shrinking", -0.3), at("S
 shot("S088", "The stretching group's shrinks a little; “≈ −1.4%”.")
 label("1–2 YEARS TURNED BACK", (D, 3270 - 200), at("S089", "years"), at("S090", off=-0.3), size=36)
 diagram("turnBack", D - 450, 3600, [win(at("S089", "turning", -0.1), at("S090", off=-0.3))], [
-    stroke([(150, -150), (40, -205), (-90, -190), (-160, -120)], at("S089", "turning"), 1.0, px=2.4, smooth=True),
-    stroke([(-175, -150), (-160, -120), (-128, -133)], at("S089", "turning", 0.9), 0.3, px=2.4),
+    stroke([(185, 120), (225, 30), (215, -60), (165, -125)], at("S089", "turning"), 1.0, px=2.4, smooth=True),
+    stroke([(170, -88), (165, -125), (200, -112)], at("S089", "turning", 0.9), 0.3, px=2.4),
 ])
-shot("S089", "Top labels fade; “1–2 YEARS TURNED BACK”; a curved arrow draws back over the walkers' hippocampus.")
+shot("S089", "Top labels fade; “1–2 YEARS TURNED BACK”; a curved arrow turns back beside the walkers' hippocampus.")
 E3x = D - 1150
 cam(at("S090", off=-0.3), 1.8, E3x, 2760, 1.0, "glides left along the page", "S090")
 label("{n} ADULTS", (E3x, 2760 - 330), at("S090", "seventy-eight"), at("S091", off=-0.2),
@@ -759,12 +766,14 @@ diagram("depBars", F, dep_base, [win(at("S101", off=-0.3), at("S104", "zero", -0
     bar(0, 0, 213, at("S102", "half"), 1.0, width=120),
 ])
 label("2.5 HOURS A WEEK", (F, 2700), at("S101", off=0.1), at("S102", off=-0.2), sub="BRISK WALKING")
+pic("walkerF", "07_walking_figure", F + 590, 2720, h=230, small=True, show=[win(at("S101", "brisk"), at("S102", off=-0.2))])
+light("walkerF", "legs", at("S101", "walking"), 1.0, size=24)
 label("NONE", (F - 320, dep_base + 45), at("S101", "twenty-five", -0.4), at("S104", "zero", -0.2), size=26)
 label("RECOMMENDED", (F + 320, dep_base + 45), at("S101", "twenty-five"), at("S104", "zero", -0.2), size=26)
 label("−{n}%", (F + 320, dep_base - 250), at("S101", "twenty-five"), at("S104", "zero", -0.2), size=34,
       count=count(0, 25, at("S101", "twenty-five"), 0.8))
 light("diagram:depBars", [(-470, 0), (470, 0)], at("S101", "brisk"), 1.4, size=26)
-shot("S101", "Neuron fades; a baseline draws and a light runs along it; “2.5 HOURS A WEEK / BRISK WALKING”; two bars grow — none vs recommended; “−25%”.")
+shot("S101", "Neuron fades; a baseline draws and a light runs along it; a small walker beside “2.5 HOURS A WEEK”; “2.5 HOURS A WEEK / BRISK WALKING”; two bars grow — none vs recommended; “−25%”.")
 label("HALF", (F, dep_base + 45), at("S102", "half"), at("S104", "zero", -0.2), size=26)
 label("−{n}%", (F, dep_base - 268), at("S102", "eighteen", -0.3), at("S104", "zero", -0.2), size=34, count=count(0, 18, at("S102", "eighteen"), 0.8))
 shot("S102", "A middle bar for half the activity; “−18%”.")
@@ -773,12 +782,12 @@ diagram("jump", F, dep_base, [win(at("S103", "jump", -0.1), at("S104", "zero", -
 light("diagram:jump", jump, at("S103", "something"), 0.9, size=28)
 label("BIGGEST JUMP", (F - 160, dep_base - 360), at("S103", "biggest"), at("S104", "zero", -0.2), size=32)
 shot("S103", "A line draws from the “none” bar to the “half” bar; a light runs down it; “BIGGEST JUMP”.")
-foot_F = footprints("footF", F - 550, 2980, 6, 220, 190,
+foot_F = footprints("footF", F - 500, 2980, 6, 200, 190,
                     lambda k: [win(at("S104", "zero") if k == 0 else (at("S105", "lot", 0.35 * (k - 1)) if k < 3 else at("S106", "walk", 0.3 * (k - 3))),
                                    at("S108", "fast", 0.5))])
 shot("S104", "“STARTING FROM ZERO”; on “zero” the chart fades and a single footprint appears.")
 shot("S105", "“THE FIRST STEPS COUNT MOST”; two more footprints follow.")
-block = [(-470, -200), (470, -200), (470, 200), (-470, 200), (-470, -200)]
+block = [(-600, -200), (600, -200), (600, 200), (-600, 200), (-600, -200)]
 diagram("block", F, 2980, [win(at("S106", "short", -0.2), at("S108", "fast", 0.5))], [stroke(block, at("S106", "walk"), 1.6, px=2.2, opacity=0.5)])
 light("diagram:block", block, at("S106", "around"), 2.4, size=30)
 label("STARTING FROM ZERO", (F, 2980 - 300), at("S104", "starting"), at("S105", off=-0.45), size=36)
@@ -788,7 +797,7 @@ shot("S106", "A loop (the block) draws itself around the footprints; a light tra
 cam(at("S107"), 2.0, F, 2960, 0.88, "eases back", "S107")
 light("diagram:block", block, at("S107", "practical"), 2.0, size=30)
 shot("S107", "The light goes round the block again.")
-pic("metroTease", "20_metronome", F + 700, 2980, h=340, show=[win(at("S108", "walk"), at("S108", "fast", 0.5))])
+pic("metroTease", "20_metronome", F + 790, 2980, h=320, show=[win(at("S108", "walk"), at("S108", "fast", 0.5))])
 cam(at("S108", "fast", -0.4), 2.6, 3000, 2600, 0.9, "travels left to the next part of the page", "S108")
 trail("trFG")
 shot("S108", "A metronome appears at the edge of the loop; then the camera travels left with footprints walking under it.")
@@ -851,20 +860,20 @@ shot("S120", "“25 × 4 = 100” beside the metronome; the arm glows.")
 light("metro", "arm_down", at("S121", "Pace"), 0.6, size=30)
 shot("S121", "The metronome arm glows once more.")
 docs = {"L": G - 330, "R": G + 330}
-diagram("docs", G, 3700, [win(at("S122", "two", -0.1), at("S124", off=-0.3))], [
+diagram("docs", G, 3700, [win(at("S122", "two", -0.1), at("S124", off=-0.6))], [
     stroke([(x - 160, -220), (x + 160, -220), (x + 160, 220), (x - 160, 220), (x - 160, -220)], at("S122", "two", 0.2 * k), 1.0, px=2.2, opacity=0.6)
     for k, x in enumerate([-330, 330])])
-label("2019", (docs["L"], 3700 - 170), at("S122", "studies"), at("S124", off=-0.3), size=28)
-label("2020", (docs["R"], 3700 - 170), at("S122", "studies", 0.2), at("S124", off=-0.3), size=28)
+label("2019", (docs["L"], 3700 - 170), at("S122", "studies"), at("S124", off=-0.6), size=28)
+label("2020", (docs["R"], 3700 - 170), at("S122", "studies", 0.2), at("S124", off=-0.6), size=28)
 shot("S122", "Metronome, dial and footprint fade; two page outlines draw themselves, labelled “2019” and “2020”.")
-diagram("docBars", G, 3700 + 150, [win(at("S123", "total", -0.1), at("S124", off=-0.3))], [
+diagram("docBars", G, 3700 + 150, [win(at("S123", "total", -0.1), at("S124", off=-0.6))], [
     bar(-380, 0, 240, at("S123", "total"), 0.9, width=60), bar(280, 0, 240, at("S123", "total", 0.15), 0.9, width=60),
     bar(-280, 0, 22, at("S123", "little"), 0.6, width=60), bar(380, 0, 22, at("S123", "little", 0.15), 0.6, width=60),
 ])
 label("STEPS", (G, 3700 + 190), at("S123", "total"), at("S124", off=-0.6), size=26)
 label("PACE, ONCE STEPS ARE COUNTED", (G, 3700 + 255), at("S123", "little"), at("S124", off=-0.6), size=24)
 shot("S123", "In each page a tall bar grows for total steps and a tiny one for pace once steps are counted.")
-pic("pedoG", "08_pedometer", G, 3700, h=420, show=[win(at("S124", off=-0.15), at("S125", off=0.7))])
+pic("pedoG", "08_pedometer", G, 3700, h=420, show=[win(at("S124", off=-0.35), at("S125", off=0.7))])
 light("pedoG", "rim", at("S124", "mattered"), 1.2)
 shot("S124", "Pages fade; the step counter returns; light circles its dial.")
 H = 0
@@ -881,20 +890,20 @@ y_of = lambda pct: -260 + (100 - pct) * 6.5
 base_y = 200
 label("HOW MANY STEPS?", (0, 2700 - 400), at("S126", off=-0.2), at("S127", "Lee", -0.45))
 shot("S126", "“HOW MANY STEPS?”; a small step counter fades in to the left.")
-pic("pedoH", "08_pedometer", -760, 2620, h=300, small=True, show=[win(at("S126", "steps"), at("S130", "least", -0.1))])
+pic("pedoH", "08_pedometer", -560, 2660, h=420, show=[win(at("S126", "steps"), at("S130", "least", -0.1))])
 label("I-MIN LEE", (0, 2700 - 400), at("S127", "Lee"), at("S128", off=-0.2), sub="HARVARD")
 light("pedoH", "rim", at("S127", "counter"), 1.2, size=26)
 shot("S127", "“I-MIN LEE / HARVARD”; light circles the small counter.")
 label("{n} WOMEN", (0, 2700 - 400), at("S128", "sixteen", -0.3), at("S130", "least", -0.1), count=count(0, 16741, at("S128", "sixteen"), 1.2))
 label("AVERAGE AGE 72", (0, 2700 - 320), at("S128", "seventy-two"), at("S130", "least", -0.1), size=30)
-label("2019", (-760, 2620 + 210), at("S128", "2019"), at("S130", "least", -0.1), size=30)
+label("2019", (-560, 2660 + 260), at("S128", "2019"), at("S130", "least", -0.1), size=30)
 shot("S128", "“2019” under the counter; “16,741 WOMEN” counts up; “AVERAGE AGE 72”.")
-diagram("followUp", 0, 2700 - 120, [win(at("S129", "week", -0.1), at("S130", "least", -0.1))], [
-    stroke([(-450, 0), (-430, 0)], at("S129", "week"), 0.4, width=36, cap="butt", opacity=0.7),
-    stroke([(-450, 80), (450, 80)], at("S129", "four"), 1.4, width=36, cap="butt", opacity=0.5),
+diagram("followUp", 200, 2700 - 120, [win(at("S129", "week", -0.1), at("S130", "least", -0.1))], [
+    stroke([(-350, 0), (-330, 0)], at("S129", "week"), 0.4, width=36, cap="butt", opacity=0.7),
+    stroke([(-350, 80), (450, 80)], at("S129", "four"), 1.4, width=36, cap="butt", opacity=0.5),
 ])
-label("1 WEEK", (-250, 2700 - 120), at("S129", "week"), at("S130", "least", -0.1), size=26)
-label("OVER 4 YEARS", (0, 2700 - 120 + 150), at("S129", "four"), at("S130", "least", -0.1), size=26)
+label("1 WEEK", (-10, 2700 - 120), at("S129", "week"), at("S130", "least", -0.1), size=26)
+label("OVER 4 YEARS", (250, 2700 - 120 + 150), at("S129", "four"), at("S130", "least", -0.1), size=26)
 shot("S129", "A tiny bar for one week of wearing the counter, then a long bar for over four years of follow-up.")
 P1, P2, P3, PE = (x_of(2700), y_of(100)), (x_of(4400), y_of(59)), (x_of(7500), y_of(45)), (x_of(12000), y_of(44))
 cam(at("S130", off=-0.3), 1.6, 0, 2730, 0.95, "settles on the chart", "S130")
@@ -925,7 +934,7 @@ light("diagram:curve", [P2, (x_of(5800), y_of(51)), P3, PE], at("S132", "leveled
 shot("S132", "The curve keeps falling, then flattens; a dot at 7,500; “LEVELS OFF”; a light runs along the curve.")
 SMx = 1250
 cam(at("S133", off=-0.3), 1.6, SMx, 2700, 1.0, "glides right to a second chart", "S133")
-label("≈ 4,800 ADULTS", (SMx, 2700 - 360), at("S133", "five"), at("S135", off=-0.3), sub="UNITED STATES")
+label("≈ 4,800 ADULTS", (SMx, 2700 - 360), at("S133", off=0.2), at("S135", off=-0.3), sub="UNITED STATES")
 shot("S133", "The curve steps aside; a baseline for a second chart; “≈ 4,800 ADULTS / UNITED STATES”.")
 diagram("smBars", SMx, 2700 + 230, [win(at("S133", off=-0.3), at("S135", off=-0.3))], [
     stroke([(-300, 0), (300, 0)], at("S133", off=-0.2), 0.8, px=2.0, opacity=0.5),

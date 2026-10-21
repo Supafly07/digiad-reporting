@@ -39,7 +39,9 @@ Working checklist. Tick items as they are done so the work can resume from here.
 - [x] Layout checker passes on every frame
 
 ## Step 5 — check and render
-- [ ] Stills every second per chapter, reviewed; fixes applied
+- [x] Stills every second per chapter, reviewed; fixes applied
+      (602 stills reviewed as contact sheets; fixes: year counter, empty-page moments, label
+      collisions, chart crossfades, counting labels, a few layouts; changed moments re-rendered)
 - [ ] Render parts, join, mux narration -> out/full-video.mp4
 - [ ] Verify duration, audio sync, no black frames
 - [ ] Commit and push

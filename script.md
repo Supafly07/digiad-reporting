@@ -102,8 +102,8 @@ Each sentence has its ID, the time it starts in the narration, what appears on s
 | S048 | 2:53.1 | But a working muscle has its own way in. | A bundle of muscle fibers fades in to the right; the key fades. | drifts |
 | S049 | 2:56.2 | When it contracts, it moves little sugar doors to its surface and pulls sugar in by itself. | The fiber bundle gives a small squeeze; dots appear along its surface; “SUGAR DOORS / GLUT4”; lights flow into the bundle. | pushes in on the fibers |
 | S050 | 3:03.0 | So when your legs are moving, they soak up sugar from your blood. | The vessel returns beside the fibers; lights flow from blood into muscle; “WHILE YOU MOVE”. | eases back |
-| S051 | 3:07.3 | This is why the timing of a walk can matter. | “TIMING” fades in over an empty part of the page. | moves down the page to a comparison |
-| S052 | 3:10.4 | In a study from New Zealand, people with type 2 diabetes tried two plans. | “NEW ZEALAND STUDY / TYPE 2 DIABETES”; two empty boxes draw themselves side by side. | drifts |
+| S051 | 3:07.3 | This is why the timing of a walk can matter. | “TIMING” fades in; two empty boxes draw themselves side by side. | moves down the page to a comparison |
+| S052 | 3:10.4 | In a study from New Zealand, people with type 2 diabetes tried two plans. | “NEW ZEALAND STUDY / TYPE 2 DIABETES” above the two boxes; on “plans” a light runs round each box. | drifts |
 | S053 | 3:15.5 | First, one thirty-minute walk a day, whenever they liked. | Left box: “30 MIN / ONCE A DAY”, a small walker, and one long bar. | drifts |
 | S054 | 3:20.0 | Then, a ten-minute walk after each meal. | Right box: three small plates appear, each followed by a short bar; “10 MIN × 3 / AFTER EACH MEAL”. | drifts |
 | S055 | 3:23.4 | Same total time. | Lights run along both bars; “SAME 30 MINUTES” under the boxes. | drifts |
@@ -164,7 +164,7 @@ Each sentence has its ID, the time it starts in the narration, what appears on s
 | S086 | 5:13.2 | Then the researchers scanned their brains. | A hippocampus appears under each group; a light scans along each one. | drifts |
 | S087 | 5:16.0 | In the walkers, the hippocampus grew by about two percent. | The walkers' hippocampus grows a little; “+2%”. | drifts |
 | S088 | 5:20.1 | In the stretching group, it kept shrinking. | The stretching group's shrinks a little; “≈ −1.4%”. | drifts |
-| S089 | 5:23.3 | That's like turning back one to two years of age-related loss. | Top labels fade; “1–2 YEARS TURNED BACK”; a curved arrow draws back over the walkers' hippocampus. | drifts |
+| S089 | 5:23.3 | That's like turning back one to two years of age-related loss. | Top labels fade; “1–2 YEARS TURNED BACK”; a curved arrow turns back beside the walkers' hippocampus. | drifts |
 | S090 | 5:27.4 | A much larger study in the UK followed about seventy-eight thousand adults wearing step counters. | Five small step counters appear in a row; “78,000 ADULTS / UNITED KINGDOM” counts up. | glides left along the page |
 | S091 | 5:33.5 | People who took about nine thousand eight hundred steps a day had about half the risk of dementia. | Step counters fade; two bars grow — the 9,800-step group's bar is half as tall; “−50% / DEMENTIA RISK”. | drifts |
 | S092 | 5:39.9 | Even three thousand eight hundred steps a day was linked to about a quarter lower risk. | A middle bar for 3,800 steps grows to three quarters; “−25%”. | drifts |
@@ -187,7 +187,7 @@ Each sentence has its ID, the time it starts in the narration, what appears on s
 | S098 | 6:06.4 | The World Health Organization calls it a leading cause of disability around the world. | “A LEADING CAUSE OF DISABILITY / WORLD HEALTH ORGANIZATION”; a light travels along the nerve cell. | drifts |
 | S099 | 6:11.6 | In 2022, scientists combined fifteen studies with nearly two hundred thousand people. | Fifteen small blocks appear in a row; “15 STUDIES”; “191,130 PEOPLE” counts up. | eases down |
 | S100 | 6:18.6 | They looked at who later developed depression. | Blocks fade; lights travel through the nerve cell. | drifts |
-| S101 | 6:21.5 | People who got the activity doctors recommend, about two and a half hours of brisk walking a week, had a twenty-five percent lower risk of depression. | Neuron fades; a baseline draws and a light runs along it; “2.5 HOURS A WEEK / BRISK WALKING”; two bars grow — none vs recommended; “−25%”. | settles on a chart |
+| S101 | 6:21.5 | People who got the activity doctors recommend, about two and a half hours of brisk walking a week, had a twenty-five percent lower risk of depression. | Neuron fades; a baseline draws and a light runs along it; a small walker beside “2.5 HOURS A WEEK”; “2.5 HOURS A WEEK / BRISK WALKING”; two bars grow — none vs recommended; “−25%”. | settles on a chart |
 | S102 | 6:30.9 | People who did half that still had about an eighteen percent lower risk. | A middle bar for half the activity; “−18%”. | drifts |
 | S103 | 6:35.5 | The biggest jump came from going from nothing to something. | A line draws from the “none” bar to the “half” bar; a light runs down it; “BIGGEST JUMP”. | drifts |
 | S104 | 6:39.8 | That's good news if you're starting from zero. | “STARTING FROM ZERO”; on “zero” the chart fades and a single footprint appears. | drifts |

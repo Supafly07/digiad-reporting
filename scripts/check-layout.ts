@@ -247,7 +247,7 @@ for (let f = 0; f < frames; f += step) {
 		const size = l.size ?? s.style.labelSize;
 		const [sx0, sy0] = worldToScreen(l.anchor, cam, s.focus);
 		const sy = Math.min(safeBottom - size, Math.max(safeTop + size, sy0 + (l.offset?.[1] ?? 0)));
-		const text = l.text.replace('{n}', (l.count?.to ?? 0).toLocaleString('en-US', {minimumFractionDigits: l.count?.decimals ?? 0}));
+		const text = l.text.replace('{n}', (l.count?.to ?? 0).toLocaleString('en-US', {minimumFractionDigits: l.count?.decimals ?? 0, useGrouping: l.count?.grouping ?? true}));
 		const half = Math.max(labelHalfWidth(text, size, s), l.sub ? labelHalfWidth(l.sub, size * 0.5, s) : 0);
 		const sx = Math.min(W - 40 - half, Math.max(40 + half, sx0 + (l.offset?.[0] ?? 0)));
 		const box: Box = [sx - half, sy - size / 2, sx + half, sy + size / 2 + (l.sub ? size * 0.85 : 0)];

@@ -341,7 +341,7 @@
  },
  "S051": {
   "screen": [
-   "“TIMING” fades in over an empty part of the page."
+   "“TIMING” fades in; two empty boxes draw themselves side by side."
   ],
   "camera": [
    "moves down the page to a comparison"
@@ -349,7 +349,7 @@
  },
  "S052": {
   "screen": [
-   "“NEW ZEALAND STUDY / TYPE 2 DIABETES”; two empty boxes draw themselves side by side."
+   "“NEW ZEALAND STUDY / TYPE 2 DIABETES” above the two boxes; on “plans” a light runs round each box."
   ],
   "camera": []
  },
@@ -593,7 +593,7 @@
  },
  "S089": {
   "screen": [
-   "Top labels fade; “1–2 YEARS TURNED BACK”; a curved arrow draws back over the walkers' hippocampus."
+   "Top labels fade; “1–2 YEARS TURNED BACK”; a curved arrow turns back beside the walkers' hippocampus."
   ],
   "camera": []
  },
@@ -675,7 +675,7 @@
  },
  "S101": {
   "screen": [
-   "Neuron fades; a baseline draws and a light runs along it; “2.5 HOURS A WEEK / BRISK WALKING”; two bars grow — none vs recommended; “−25%”."
+   "Neuron fades; a baseline draws and a light runs along it; a small walker beside “2.5 HOURS A WEEK”; “2.5 HOURS A WEEK / BRISK WALKING”; two bars grow — none vs recommended; “−25%”."
   ],
   "camera": [
    "settles on a chart"
