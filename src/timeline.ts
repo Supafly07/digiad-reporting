@@ -13,15 +13,54 @@ export const easeIn = (t: number) => Math.pow(clamp01(t), 3);
 export const easeInOutSine = (t: number) => -(Math.cos(Math.PI * clamp01(t)) - 1) / 2;
 export const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
+const clean = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+// Sentence id -> its words, built once per words array (long videos resolve thousands of cues).
+const bySentence = new WeakMap<Word[], Map<string, Word[]>>();
+const sentenceWords = (words: Word[], sid: string) => {
+	let m = bySentence.get(words);
+	if (!m) {
+		m = new Map();
+		for (const w of words) {
+			if (w.sid) {
+				if (!m.has(w.sid)) {
+					m.set(w.sid, []);
+				}
+				m.get(w.sid)!.push(w);
+			}
+		}
+		bySentence.set(words, m);
+	}
+	const ws = m.get(sid);
+	if (!ws) {
+		throw new Error(`No sentence ${sid} in the narration timing`);
+	}
+	return ws;
+};
+
 export const resolveTime = (t: Time, words: Word[]): number => {
 	if (typeof t === 'number') {
 		return t;
+	}
+	if ('s' in t) {
+		const ws = sentenceWords(words, t.s);
+		let w: Word;
+		if (t.say) {
+			const hits = ws.filter((x) => clean(x.text) === clean(t.say!));
+			const hit = hits[(t.nth ?? 1) - 1];
+			if (!hit) {
+				throw new Error(`Sentence ${t.s} has no word "${t.say}" (#${t.nth ?? 1})`);
+			}
+			w = hit;
+		} else {
+			w = t.edge === 'end' ? ws[ws.length - 1] : ws[0];
+		}
+		return (t.edge === 'end' ? w.end : w.start) + (t.offset ?? 0);
 	}
 	const w = words[t.word];
 	if (!w) {
 		throw new Error(`No word #${t.word} in the narration timing`);
 	}
-	const clean = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
 	if (clean(w.text) !== clean(t.say)) {
 		throw new Error(`Word #${t.word} is "${w.text}", settings expected "${t.say}"`);
 	}
@@ -53,7 +92,41 @@ export const cameraAt = (time: number, s: Settings, words: Word[]): CameraTarget
 		}
 		prev = m.to;
 	}
+	// A slow, uneven wander so the camera never holds perfectly still.
+	if (s.drift) {
+		const w = (a: number, b: number, c: number) =>
+			0.55 * Math.sin((time / a) * Math.PI * 2 + 0.7) + 0.3 * Math.sin((time / b) * Math.PI * 2 + 2.1) +
+			0.15 * Math.sin((time / c) * Math.PI * 2 + 4.0);
+		const z = Math.exp(logZ);
+		x += (s.drift.px * w(13.7, 7.3, 4.1)) / z;
+		y += (s.drift.px * 0.7 * w(11.3, 6.1, 3.7)) / z;
+		logZ += s.drift.zoom * w(17.9, 9.7, 5.3);
+	}
 	return {x, y, zoom: Math.exp(logZ)};
+};
+
+// Where a background layer sits on screen: relative to its home camera it moves `parallax`
+// times as far and zooms `parallax` times as much (in log terms) as the page.
+export const depthCamera = (cam: CameraTarget, depth: {parallax: number; home: CameraTarget}): CameraTarget => ({
+	x: depth.home.x + (cam.x - depth.home.x) * depth.parallax,
+	y: depth.home.y + (cam.y - depth.home.y) * depth.parallax,
+	zoom: depth.home.zoom * Math.pow(cam.zoom / depth.home.zoom, depth.parallax),
+});
+
+export type ChapterSpan = {id: string; title: string; start: number; end: number};
+
+// Chapters start halfway through the pause before their first word, so parts join in silence.
+export const chapterSpans = (s: Settings, words: Word[], totalSeconds: number): ChapterSpan[] => {
+	const chapters = s.chapters ?? [{id: 'all', title: s.title, from: 0}];
+	const starts = chapters.map((c, i) => {
+		if (i === 0) {
+			return 0;
+		}
+		const t = resolveTime(c.from, words);
+		const before = words.filter((w) => w.end <= t + 1e-6).pop();
+		return before ? (before.end + t) / 2 : t;
+	});
+	return chapters.map((c, i) => ({id: c.id, title: c.title, start: starts[i], end: i + 1 < chapters.length ? starts[i + 1] : totalSeconds}));
 };
 
 export const worldToScreen = (p: Vec, cam: CameraTarget, focus: Vec): Vec => [

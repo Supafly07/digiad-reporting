@@ -26,3 +26,6 @@ out/stills/
 .DS_Store
 .vscode/
 .idea/
+out/raw_pictures/
+out/picture_review.jpg
+voice/work/

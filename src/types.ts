@@ -3,7 +3,12 @@
 
 // A moment in the video: plain seconds, or a word from the narration timing file
 // ("say" is checked against the transcript so a typo in the index fails loudly).
-export type Time = number | {word: number; say: string; offset?: number; edge?: 'start' | 'end'};
+// For long videos a cue can name a sentence id from the script instead ({s: "S012", say: "sugar"});
+// without "say" it is the start (or, with edge "end", the end) of that sentence.
+export type Time =
+	| number
+	| {word: number; say: string; offset?: number; edge?: 'start' | 'end'}
+	| {s: string; say?: string; nth?: number; offset?: number; edge?: 'start' | 'end'};
 
 export type Vec = [number, number];
 
@@ -39,6 +44,37 @@ export type Picture = {
 	show: ShowWindow[];
 	// Gentle repeating scale pulse (a heartbeat), between from and to.
 	pulse?: {from: Time; to: Time; bpm: number; amount: number};
+	// Maximum opacity (e.g. 0.15 for a faint background element).
+	opacity?: number;
+	// A background layer: moves slower than the page (parallax < 1) and is a little blurred.
+	// It is drawn exactly where placed when the camera is at "home".
+	depth?: {parallax: number; blur: number; home: CameraTarget};
+	// Decoration (e.g. background footprints) is allowed to run off the frame edge.
+	decor?: boolean;
+	note?: string;
+};
+
+// A diagram that draws itself: strokes in local coordinates around (x, y) on the page.
+export type Stroke = {
+	points: Vec[];
+	at: Time;
+	dur: number;
+	// Line width in world units (bars), or "px" for a hairline that stays thin at any zoom.
+	width?: number;
+	px?: number;
+	opacity?: number;
+	smooth?: boolean;
+	cap?: 'round' | 'butt';
+};
+
+export type Diagram = {
+	id: string;
+	x: number;
+	y: number;
+	show: ShowWindow[];
+	strokes: Stroke[];
+	// Small filled dots that fade in (data points).
+	dots?: {at: Vec; time: Time; r: number}[];
 	note?: string;
 };
 
@@ -62,7 +98,9 @@ export type Magnifier = {
 
 // A soft light travelling along a path traced on a picture (normalized picture coordinates).
 export type Light = {
-	on: string; // picture id, or "lens:<magnifier id>" for the picture inside a lens
+	// picture id, "lens:<magnifier id>" for the picture inside a lens, or "diagram:<id>"
+	// (then the path is in the diagram's local coordinates, not 0..1).
+	on: string;
 	path: Vec[];
 	at: Time;
 	dur: number;
@@ -78,9 +116,13 @@ export type Label = {
 	offset?: Vec; // screen px from the anchor
 	in: Time;
 	out: Time;
-	count?: {from: number; to: number; at: Time; dur: number};
+	count?: {from: number; to: number; at: Time; dur: number; decimals?: number};
 	size?: number;
+	// Smaller, lighter second line under the main text.
+	sub?: string;
 };
+
+export type Chapter = {id: string; title: string; from: Time};
 
 export type Settings = {
 	title: string;
@@ -110,11 +152,26 @@ export type Settings = {
 	};
 	fade: {dur: number; scale: number; blur: number};
 	camera: {start: CameraTarget; moves: CameraMove[]};
+	// The camera never holds perfectly still: a slow wander of this many screen px and zoom.
+	drift?: {px: number; zoom: number};
+	// Chapters become separately renderable "Part" compositions that join seamlessly.
+	chapters?: Chapter[];
 	pictures: Picture[];
 	magnifiers: Magnifier[];
 	lights: Light[];
 	labels: Label[];
+	diagrams?: Diagram[];
 };
 
-export type Word = {text: string; start: number; end: number; i: number; sentence: number};
+export type Word = {
+	text: string;
+	start: number;
+	end: number;
+	i: number;
+	sentence: number;
+	sid?: string;
+	wi?: number;
+	paragraph?: string;
+	chapter?: string;
+};
 export type WordsFile = {audio: string; duration: number; words: Word[]};

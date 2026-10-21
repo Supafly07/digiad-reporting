@@ -112,3 +112,137 @@ A single full human figure walking, seen from the side in profile, wearing simpl
 All seven cut-outs were later converted to pure grayscale (transparency kept), because the
 accent blue must only come from the animation. The walking figure had a faint blue smear on
 the back shin (0.16% of its pixels); the others had no visible colour.
+
+---
+
+# Full video — new pictures (GPT Image 2.5 via kie.ai)
+
+Higgsfield is not connected to this session, so the same model (GPT Image 2.5, Sunburst, 2K, `quality: high`) was used through kie.ai. Background removal: `recraft/remove-background`. All cut-outs converted to pure grayscale afterwards.
+
+Style line (word for word, from the brief): *Black and white scientific illustration, fine ink lines and soft graphite shading, like an old textbook, with one soft blue accent added by the animation for light and movement.*
+
+Every prompt also carries a firm black-and-white sentence right after the subject, because the style line's mention of blue made the model paint blue in on the short.
+
+## `08_pedometer.png` — 1:1, 1 attempt(s)
+
+**Attempt 1** — ✅ Kept.
+
+```text
+A single vintage 1960s mechanical pedometer with a belt clip, seen from the front, with a plain round dial and one needle. Strictly monochrome graphite drawing in black, white and grey only: no blue, no glow, no light effects, no color of any kind. Lots of empty space around it, nothing touching the edges. Black and white scientific illustration, fine ink lines and soft graphite shading, like an old textbook, with one soft blue accent added by the animation for light and movement. Plain white background, no text, no labels, no numbers, no arrows, no shadows, no frame.
+```
+
+## `09_calf_muscle.png` — 2:3, 1 attempt(s)
+
+**Attempt 1** — ✅ Kept.
+
+```text
+A single human calf muscle on its own, without skin or bone, anatomical illustration seen from behind. Strictly monochrome graphite drawing in black, white and grey only: no blue, no glow, no light effects, no color of any kind. Lots of empty space around it, nothing touching the edges. Black and white scientific illustration, fine ink lines and soft graphite shading, like an old textbook, with one soft blue accent added by the animation for light and movement. Plain white background, no text, no labels, no numbers, no arrows, no shadows, no frame.
+```
+
+## `10_vein_valves.png` — 2:3, 1 attempt(s)
+
+**Attempt 1** — ✅ Kept.
+
+```text
+A single short segment of a human leg vein, standing upright and cut open lengthwise to show two thin one-way valves inside, seen from the side. Strictly monochrome graphite drawing in black, white and grey only: no blue, no glow, no light effects, no color of any kind. Lots of empty space around it, nothing touching the edges. Black and white scientific illustration, fine ink lines and soft graphite shading, like an old textbook, with one soft blue accent added by the animation for light and movement. Plain white background, no text, no labels, no numbers, no arrows, no shadows, no frame.
+```
+
+## `11_sugar_cube.png` — 1:1, 1 attempt(s)
+
+**Attempt 1** — ✅ Kept.
+
+```text
+A single sugar cube, seen from a three-quarter angle. Strictly monochrome graphite drawing in black, white and grey only: no blue, no glow, no light effects, no color of any kind. Lots of empty space around it, nothing touching the edges. Black and white scientific illustration, fine ink lines and soft graphite shading, like an old textbook, with one soft blue accent added by the animation for light and movement. Plain white background, no text, no labels, no numbers, no arrows, no shadows, no frame.
+```
+
+## `12_meal_plate.png` — 3:2, 1 attempt(s)
+
+**Attempt 1** — ✅ Kept.
+
+```text
+A single round dinner plate with a simple meal of rice, vegetables and a piece of fish, seen from slightly above. Strictly monochrome graphite drawing in black, white and grey only: no blue, no glow, no light effects, no color of any kind. Lots of empty space around it, nothing touching the edges. Black and white scientific illustration, fine ink lines and soft graphite shading, like an old textbook, with one soft blue accent added by the animation for light and movement. Plain white background, no text, no labels, no numbers, no arrows, no shadows, no frame.
+```
+
+## `13_muscle_fiber.png` — 3:2, 1 attempt(s)
+
+**Attempt 1** — ✅ Kept.
+
+```text
+A single bundle of muscle fibers, cut across at one end to show the many round fibers inside, seen from a three-quarter angle. Strictly monochrome graphite drawing in black, white and grey only: no blue, no glow, no light effects, no color of any kind. Lots of empty space around it, nothing touching the edges. Black and white scientific illustration, fine ink lines and soft graphite shading, like an old textbook, with one soft blue accent added by the animation for light and movement. Plain white background, no text, no labels, no numbers, no arrows, no shadows, no frame.
+```
+
+## `14_key.png` — 3:2, 1 attempt(s)
+
+**Attempt 1** — ✅ Kept.
+
+```text
+A single old-fashioned key, lying horizontally, seen from the side. Strictly monochrome graphite drawing in black, white and grey only: no blue, no glow, no light effects, no color of any kind. Lots of empty space around it, nothing touching the edges. Black and white scientific illustration, fine ink lines and soft graphite shading, like an old textbook, with one soft blue accent added by the animation for light and movement. Plain white background, no text, no labels, no numbers, no arrows, no shadows, no frame.
+```
+
+## `15_stethoscope.png` — 1:1, 1 attempt(s)
+
+**Attempt 1** — ✅ Kept.
+
+```text
+A single stethoscope laid out in a loose curve, seen from above. Strictly monochrome graphite drawing in black, white and grey only: no blue, no glow, no light effects, no color of any kind. Lots of empty space around it, nothing touching the edges. Black and white scientific illustration, fine ink lines and soft graphite shading, like an old textbook, with one soft blue accent added by the animation for light and movement. Plain white background, no text, no labels, no numbers, no arrows, no shadows, no frame.
+```
+
+## `16_hippocampus.png` — 3:2, 1 attempt(s)
+
+**Attempt 1** — ✅ Kept.
+
+```text
+A single human hippocampus on its own, the curved seahorse-shaped brain structure, anatomical illustration seen from the side. Strictly monochrome graphite drawing in black, white and grey only: no blue, no glow, no light effects, no color of any kind. Lots of empty space around it, nothing touching the edges. Black and white scientific illustration, fine ink lines and soft graphite shading, like an old textbook, with one soft blue accent added by the animation for light and movement. Plain white background, no text, no labels, no numbers, no arrows, no shadows, no frame.
+```
+
+## `17_seahorse.png` — 2:3, 1 attempt(s)
+
+**Attempt 1** — ✅ Kept.
+
+```text
+A single seahorse, seen from the side. Strictly monochrome graphite drawing in black, white and grey only: no blue, no glow, no light effects, no color of any kind. Lots of empty space around it, nothing touching the edges. Black and white scientific illustration, fine ink lines and soft graphite shading, like an old textbook, with one soft blue accent added by the animation for light and movement. Plain white background, no text, no labels, no numbers, no arrows, no shadows, no frame.
+```
+
+## `18_neuron.png` — 3:2, 2 attempt(s)
+
+**Attempt 1** — ❌ Rejected — faint, wispy lines unlike the others, blue-tinted axon, nearly touching the edge.
+
+```text
+A single nerve cell (neuron) with branching dendrites and one long axon, seen from the side. Strictly monochrome graphite drawing in black, white and grey only: no blue, no glow, no light effects, no color of any kind. Lots of empty space around it, nothing touching the edges. Black and white scientific illustration, fine ink lines and soft graphite shading, like an old textbook, with one soft blue accent added by the animation for light and movement. Plain white background, no text, no labels, no numbers, no arrows, no shadows, no frame.
+```
+
+**Attempt 2** — ✅ Kept.
+
+```text
+A single nerve cell (neuron) with a round cell body, a few thick branching dendrites and one long axon curving to the right, drawn with bold ink lines and graphite shading, seen from the side. Strictly monochrome graphite drawing in black, white and grey only: no blue, no glow, no light effects, no color of any kind. Lots of empty space around it, nothing touching the edges. Black and white scientific illustration, fine ink lines and soft graphite shading, like an old textbook, with one soft blue accent added by the animation for light and movement. Plain white background, no text, no labels, no numbers, no arrows, no shadows, no frame.
+```
+
+## `19_light_bulb.png` — 2:3, 2 attempt(s)
+
+**Attempt 1** — ❌ Rejected — light-blue tint in the glass.
+
+```text
+A single vintage light bulb with a visible filament, standing upright, seen from the side. Strictly monochrome graphite drawing in black, white and grey only: no blue, no glow, no light effects, no color of any kind. Lots of empty space around it, nothing touching the edges. Black and white scientific illustration, fine ink lines and soft graphite shading, like an old textbook, with one soft blue accent added by the animation for light and movement. Plain white background, no text, no labels, no numbers, no arrows, no shadows, no frame.
+```
+
+**Attempt 2** — ✅ Kept.
+
+```text
+A single vintage light bulb with a visible filament and clear glass shaded only in grey, standing upright, seen from the side. Strictly monochrome graphite drawing in black, white and grey only: no blue, no glow, no light effects, no color of any kind. Lots of empty space around it, nothing touching the edges. Black and white scientific illustration, fine ink lines and soft graphite shading, like an old textbook, with one soft blue accent added by the animation for light and movement. Plain white background, no text, no labels, no numbers, no arrows, no shadows, no frame.
+```
+
+## `20_metronome.png` — 2:3, 1 attempt(s)
+
+**Attempt 1** — ✅ Kept.
+
+```text
+A single mechanical pyramid-shaped metronome with its pendulum arm upright in the middle, seen from the front, with a plain face. Strictly monochrome graphite drawing in black, white and grey only: no blue, no glow, no light effects, no color of any kind. Lots of empty space around it, nothing touching the edges. Black and white scientific illustration, fine ink lines and soft graphite shading, like an old textbook, with one soft blue accent added by the animation for light and movement. Plain white background, no text, no labels, no numbers, no arrows, no shadows, no frame.
+```
+
+## `21_footprint.png` — 2:3, 1 attempt(s)
+
+**Attempt 1** — ✅ Kept.
+
+```text
+A single outline drawing of the sole print of a bare human foot, seen from directly above, toes pointing up. Strictly monochrome graphite drawing in black, white and grey only: no blue, no glow, no light effects, no color of any kind. Lots of empty space around it, nothing touching the edges. Black and white scientific illustration, fine ink lines and soft graphite shading, like an old textbook, with one soft blue accent added by the animation for light and movement. Plain white background, no text, no labels, no numbers, no arrows, no shadows, no frame.
+```

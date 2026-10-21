@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {AbsoluteFill, Audio, continueRender, delayRender, Img, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {loadFont} from '@remotion/fonts';
-import type {CameraTarget, Light, Magnifier, Picture, Settings, Vec, Word} from './types';
+import type {CameraTarget, Diagram, Light, Magnifier, Picture, Settings, Vec, Word} from './types';
 import {
 	appearance,
 	buildPath,
 	cameraAt,
 	clamp01,
+	depthCamera,
 	easeInOutSine,
 	labelHalfWidth,
 	lerp,
@@ -18,7 +19,8 @@ import {
 	worldToScreen,
 } from './timeline';
 
-export type ExplainerProps = {settingsFile: string; settings?: Settings; words?: Word[]};
+// offsetFrames: a "Part" renders the slice of the global timeline that starts there.
+export type ExplainerProps = {settingsFile: string; part?: number; settings?: Settings; words?: Word[]; offsetFrames?: number};
 
 // Faint dot grid. parallax < 1 puts it further away: it moves and zooms less than the page.
 const DotGrid: React.FC<{
@@ -143,7 +145,7 @@ const PictureView: React.FC<{p: Picture; time: number; s: Settings; words: Word[
 				top: p.y,
 				width: p.w,
 				height: p.h,
-				opacity: a.opacity,
+				opacity: a.opacity * (p.opacity ?? 1),
 				transform: `scale(${scale})`,
 				transformOrigin: `${p.w / 2}px ${p.h / 2}px`,
 				filter: a.blur > 0.05 ? `blur(${a.blur / zoom}px)` : undefined,
@@ -239,9 +241,88 @@ const MagnifierView: React.FC<{
 	);
 };
 
-const formatCount = (n: number) => Math.round(n).toLocaleString('en-US');
+// A background-layer picture, drawn in screen space with its own (slower) camera.
+const DepthPictureView: React.FC<{p: Picture; time: number; s: Settings; words: Word[]; cam: CameraTarget}> = ({
+	p,
+	time,
+	s,
+	words,
+	cam,
+}) => {
+	const a = appearance(p.show, time, s, words);
+	if (a.opacity <= 0.001 || !p.depth) {
+		return null;
+	}
+	const dc = depthCamera(cam, p.depth);
+	const [left, top] = worldToScreen([p.x, p.y], dc, s.focus);
+	return (
+		<Img
+			src={staticFile(p.src)}
+			style={{
+				position: 'absolute',
+				left,
+				top,
+				width: p.w * dc.zoom,
+				height: p.h * dc.zoom,
+				opacity: a.opacity * (p.opacity ?? 1),
+				transform: `scale(${a.scale})`,
+				filter: `blur(${p.depth.blur + a.blur}px)`,
+			}}
+		/>
+	);
+};
 
-export const Explainer: React.FC<ExplainerProps> = ({settings, words}) => {
+// Strokes draw themselves on (dash offset); bars are just thick strokes.
+const DiagramView: React.FC<{d: Diagram; time: number; s: Settings; words: Word[]; zoom: number}> = ({d, time, s, words, zoom}) => {
+	const a = appearance(d.show, time, s, words);
+	if (a.opacity <= 0.001) {
+		return null;
+	}
+	return (
+		<svg
+			style={{position: 'absolute', left: d.x, top: d.y, overflow: 'visible', opacity: a.opacity, filter: a.blur > 0.05 ? `blur(${a.blur / zoom}px)` : undefined}}
+			width={1}
+			height={1}
+		>
+			{d.strokes.map((st, i) => {
+				const e = smoother((time - resolveTime(st.at, words)) / st.dur);
+				if (e <= 0) {
+					return null;
+				}
+				let pts = st.points;
+				if (st.smooth) {
+					const path = buildPath(st.points);
+					pts = Array.from({length: 60}, (_, k) => path.at(k / 59));
+				}
+				const dPath = pts.map((p, k) => `${k ? 'L' : 'M'}${p[0]} ${p[1]}`).join(' ');
+				return (
+					<path
+						key={i}
+						d={dPath}
+						fill="none"
+						stroke={s.style.ink}
+						strokeOpacity={st.opacity ?? 1}
+						strokeWidth={st.width ?? (st.px ?? 2.2) / zoom}
+						strokeLinecap={st.cap ?? 'round'}
+						strokeLinejoin="round"
+						pathLength={1}
+						strokeDasharray="1 1"
+						strokeDashoffset={1 - e}
+					/>
+				);
+			})}
+			{(d.dots ?? []).map((dot, i) => {
+				const e = smoother((time - resolveTime(dot.time, words)) / 0.5);
+				return e > 0 ? <circle key={i} cx={dot.at[0]} cy={dot.at[1]} r={(dot.r * lerp(0.6, 1, e)) / zoom} fill={s.style.ink} opacity={e} /> : null;
+			})}
+		</svg>
+	);
+};
+
+const formatCount = (n: number, decimals = 0) =>
+	n.toLocaleString('en-US', {minimumFractionDigits: decimals, maximumFractionDigits: decimals});
+
+export const Explainer: React.FC<ExplainerProps> = ({settings, words, offsetFrames = 0}) => {
 	const frame = useCurrentFrame();
 	const {fps, width, height} = useVideoConfig();
 	const [fontHandle] = useState(() => delayRender('Loading label font'));
@@ -261,9 +342,10 @@ export const Explainer: React.FC<ExplainerProps> = ({settings, words}) => {
 		return null;
 	}
 	const s = settings;
-	const time = frame / fps;
+	const time = (frame + offsetFrames) / fps;
 	const cam = cameraAt(time, s, words);
 	const byId = new Map(s.pictures.map((p) => [p.id, p]));
+	const diagrams = new Map((s.diagrams ?? []).map((d) => [d.id, d]));
 
 	// Map a normalized point on a picture to world space, following its fade scale / pulse.
 	const onPicture = (p: Picture) => {
@@ -282,7 +364,7 @@ export const Explainer: React.FC<ExplainerProps> = ({settings, words}) => {
 
 	return (
 		<AbsoluteFill style={{background: s.style.background, overflow: 'hidden'}}>
-			<Audio src={staticFile(s.audio)} />
+			<Audio src={staticFile(s.audio)} startFrom={offsetFrames} />
 			<DotGrid
 				cam={cam}
 				focus={s.focus}
@@ -293,6 +375,11 @@ export const Explainer: React.FC<ExplainerProps> = ({settings, words}) => {
 				blur={s.grid.far.blur}
 				ink={s.style.ink}
 			/>
+			{s.pictures
+				.filter((p) => p.depth)
+				.map((p) => (
+					<DepthPictureView key={p.id} p={p} time={time} s={s} words={words} cam={cam} />
+				))}
 			<DotGrid cam={cam} focus={s.focus} spacing={s.grid.spacing} dot={s.grid.dot} opacity={s.grid.opacity} parallax={1} blur={0} ink={s.style.ink} />
 
 			{/* The page: everything in world units, filmed by one camera. */}
@@ -305,17 +392,33 @@ export const Explainer: React.FC<ExplainerProps> = ({settings, words}) => {
 					transform: `translate(${s.focus[0] - cam.x * cam.zoom}px, ${s.focus[1] - cam.y * cam.zoom}px) scale(${cam.zoom})`,
 				}}
 			>
-				{s.pictures.map((p) => (
-					<PictureView key={p.id} p={p} time={time} s={s} words={words} zoom={cam.zoom} />
+				{s.pictures
+					.filter((p) => !p.depth)
+					.map((p) => (
+						<PictureView key={p.id} p={p} time={time} s={s} words={words} zoom={cam.zoom} />
+					))}
+				{(s.diagrams ?? []).map((d) => (
+					<DiagramView key={d.id} d={d} time={time} s={s} words={words} zoom={cam.zoom} />
 				))}
 				{s.lights
 					.filter((l) => !l.on.startsWith('lens:'))
 					.flatMap((light, li) => {
-						const pic = byId.get(light.on);
-						if (!pic) {
-							throw new Error(`Light on unknown picture "${light.on}"`);
+						let opacity: number;
+						let map: (n: Vec) => Vec;
+						if (light.on.startsWith('diagram:')) {
+							const d = diagrams.get(light.on.slice(8));
+							if (!d) {
+								throw new Error(`Light on unknown diagram "${light.on}"`);
+							}
+							opacity = appearance(d.show, time, s, words).opacity;
+							map = (n) => [d.x + n[0], d.y + n[1]];
+						} else {
+							const pic = byId.get(light.on);
+							if (!pic) {
+								throw new Error(`Light on unknown picture "${light.on}"`);
+							}
+							({opacity, map} = onPicture(pic));
 						}
-						const {opacity, map} = onPicture(pic);
 						return lightStarts(light, words).map((t0, ri) => {
 							const g = lightPoints(light, time, t0, map);
 							return g && opacity > 0.01 ? (
@@ -340,9 +443,9 @@ export const Explainer: React.FC<ExplainerProps> = ({settings, words}) => {
 				let text = l.text;
 				if (l.count) {
 					const p = smoother((time - resolveTime(l.count.at, words)) / l.count.dur);
-					text = text.replace('{n}', formatCount(lerp(l.count.from, l.count.to, clamp01(p))));
+					text = text.replace('{n}', formatCount(lerp(l.count.from, l.count.to, clamp01(p)), l.count.decimals));
 				}
-				const half = labelHalfWidth(l.text.replace('{n}', formatCount(l.count?.to ?? 0)), size, s);
+				const half = labelHalfWidth(l.text.replace('{n}', formatCount(l.count?.to ?? 0, l.count?.decimals)), size, s);
 				const sx = Math.min(width - 40 - half, Math.max(40 + half, sx0 + (l.offset?.[0] ?? 0)));
 				return (
 					<div
@@ -367,6 +470,11 @@ export const Explainer: React.FC<ExplainerProps> = ({settings, words}) => {
 						}}
 					>
 						{text}
+						{l.sub ? (
+							<div style={{fontSize: size * 0.5, marginTop: size * 0.35, opacity: 0.62, letterSpacing: `${s.style.labelTracking * 0.9}em`}}>
+								{l.sub}
+							</div>
+						) : null}
 					</div>
 				);
 			})}
