@@ -46,6 +46,11 @@ export type Picture = {
 	pulse?: {from: Time; to: Time; bpm: number; amount: number};
 	// Maximum opacity (e.g. 0.15 for a faint background element).
 	opacity?: number;
+	// Rotation in degrees and horizontal mirroring (e.g. footprints walking across the page).
+	rotate?: number;
+	flip?: boolean;
+	// Slow size changes over time (e.g. something that grows or shrinks), multiplied together.
+	grow?: {at: Time; dur: number; to: number}[];
 	// A background layer: moves slower than the page (parallax < 1) and is a little blurred.
 	// It is drawn exactly where placed when the camera is at "home".
 	depth?: {parallax: number; blur: number; home: CameraTarget};

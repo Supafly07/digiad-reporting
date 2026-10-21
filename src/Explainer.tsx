@@ -9,10 +9,12 @@ import {
 	clamp01,
 	depthCamera,
 	easeInOutSine,
+	growScale,
 	labelHalfWidth,
 	lerp,
 	magnifierAt,
 	outerTangents,
+	pictureMapper,
 	pulseScale,
 	resolveTime,
 	smoother,
@@ -135,7 +137,7 @@ const PictureView: React.FC<{p: Picture; time: number; s: Settings; words: Word[
 	if (a.opacity <= 0.001) {
 		return null;
 	}
-	const scale = a.scale * pulseScale(p, time, words);
+	const scale = a.scale * pulseScale(p, time, words) * growScale(p, time, words);
 	return (
 		<Img
 			src={staticFile(p.src)}
@@ -146,7 +148,7 @@ const PictureView: React.FC<{p: Picture; time: number; s: Settings; words: Word[
 				width: p.w,
 				height: p.h,
 				opacity: a.opacity * (p.opacity ?? 1),
-				transform: `scale(${scale})`,
+				transform: `rotate(${p.rotate ?? 0}deg) scale(${p.flip ? -scale : scale}, ${scale})`,
 				transformOrigin: `${p.w / 2}px ${p.h / 2}px`,
 				filter: a.blur > 0.05 ? `blur(${a.blur / zoom}px)` : undefined,
 			}}
@@ -265,7 +267,7 @@ const DepthPictureView: React.FC<{p: Picture; time: number; s: Settings; words: 
 				width: p.w * dc.zoom,
 				height: p.h * dc.zoom,
 				opacity: a.opacity * (p.opacity ?? 1),
-				transform: `scale(${a.scale})`,
+				transform: `rotate(${p.rotate ?? 0}deg) scale(${p.flip ? -a.scale : a.scale}, ${a.scale})`,
 				filter: `blur(${p.depth.blur + a.blur}px)`,
 			}}
 		/>
@@ -350,12 +352,9 @@ export const Explainer: React.FC<ExplainerProps> = ({settings, words, offsetFram
 	// Map a normalized point on a picture to world space, following its fade scale / pulse.
 	const onPicture = (p: Picture) => {
 		const a = appearance(p.show, time, s, words);
-		const sc = a.scale * pulseScale(p, time, words);
-		const cx = p.x + p.w / 2;
-		const cy = p.y + p.h / 2;
 		return {
-			opacity: a.opacity,
-			map: (n: Vec): Vec => [cx + (p.x + n[0] * p.w - cx) * sc, cy + (p.y + n[1] * p.h - cy) * sc],
+			opacity: a.opacity * (p.opacity ?? 1),
+			map: pictureMapper(p, a.scale * pulseScale(p, time, words) * growScale(p, time, words)),
 		};
 	};
 

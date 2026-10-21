@@ -1,0 +1,840 @@
+[
+ {
+  "id": "intro",
+  "title": "Opening",
+  "paragraphs": [
+   {
+    "id": "P01",
+    "text": "The goal of ten thousand steps a day did not come from a lab. It came from a step counter sold in Japan in 1965. Its name meant ten thousand steps meter. Nobody had tested the number. It was simply easy to remember.",
+    "sentences": [
+     {
+      "id": "S001",
+      "text": "The goal of ten thousand steps a day did not come from a lab."
+     },
+     {
+      "id": "S002",
+      "text": "It came from a step counter sold in Japan in 1965."
+     },
+     {
+      "id": "S003",
+      "text": "Its name meant ten thousand steps meter."
+     },
+     {
+      "id": "S004",
+      "text": "Nobody had tested the number."
+     },
+     {
+      "id": "S005",
+      "text": "It was simply easy to remember."
+     }
+    ]
+   },
+   {
+    "id": "P02",
+    "text": "So here's what we'll find out. What actually happens inside your body when you walk? And how many steps does the science say you really need? By the end, we'll come back to that little step counter, and see how close it came.",
+    "sentences": [
+     {
+      "id": "S006",
+      "text": "So here's what we'll find out."
+     },
+     {
+      "id": "S007",
+      "text": "What actually happens inside your body when you walk?"
+     },
+     {
+      "id": "S008",
+      "text": "And how many steps does the science say you really need?"
+     },
+     {
+      "id": "S009",
+      "text": "By the end, we'll come back to that little step counter, and see how close it came."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ch1",
+  "title": "Where did ten thousand come from?",
+  "paragraphs": [
+   {
+    "id": "P03",
+    "text": "Let's start with that step counter. In the 1960s, Japan was excited about fitness. Tokyo had just hosted the Olympic Games. A company called Yamasa sold a small step counter you clipped to your belt. Inside, a little weight swung with each step and moved the count up by one. They called it manpo-kei. Man means ten thousand. Po means step. Kei means meter. Put together, a ten thousand steps meter.",
+    "sentences": [
+     {
+      "id": "S010",
+      "text": "Let's start with that step counter."
+     },
+     {
+      "id": "S011",
+      "text": "In the 1960s, Japan was excited about fitness."
+     },
+     {
+      "id": "S012",
+      "text": "Tokyo had just hosted the Olympic Games."
+     },
+     {
+      "id": "S013",
+      "text": "A company called Yamasa sold a small step counter you clipped to your belt."
+     },
+     {
+      "id": "S014",
+      "text": "Inside, a little weight swung with each step and moved the count up by one."
+     },
+     {
+      "id": "S015",
+      "text": "They called it manpo-kei."
+     },
+     {
+      "id": "S016",
+      "text": "Man means ten thousand."
+     },
+     {
+      "id": "S017",
+      "text": "Po means step."
+     },
+     {
+      "id": "S018",
+      "text": "Kei means meter."
+     },
+     {
+      "id": "S019",
+      "text": "Put together, a ten thousand steps meter."
+     }
+    ]
+   },
+   {
+    "id": "P04",
+    "text": "It was a good name. But it was not a finding. Years later, a Harvard researcher named I-Min Lee went looking for the science behind the number. She found it had started as a brand name. So researchers began to test it properly, with real people wearing step counters. We'll get to what they found. But first, a simpler question. What does one step actually do?",
+    "sentences": [
+     {
+      "id": "S020",
+      "text": "It was a good name."
+     },
+     {
+      "id": "S021",
+      "text": "But it was not a finding."
+     },
+     {
+      "id": "S022",
+      "text": "Years later, a Harvard researcher named I-Min Lee went looking for the science behind the number."
+     },
+     {
+      "id": "S023",
+      "text": "She found it had started as a brand name."
+     },
+     {
+      "id": "S024",
+      "text": "So researchers began to test it properly, with real people wearing step counters."
+     },
+     {
+      "id": "S025",
+      "text": "We'll get to what they found."
+     },
+     {
+      "id": "S026",
+      "text": "But first, a simpler question."
+     },
+     {
+      "id": "S027",
+      "text": "What does one step actually do?"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ch2",
+  "title": "What happens in your legs?",
+  "paragraphs": [
+   {
+    "id": "P05",
+    "text": "Take one step and look at your legs. Walking uses some of the biggest muscles in your body. The big muscles at the front of your thigh tighten to keep your knee steady. The muscles at the back of your hip and thigh push your body forward. And down in your calf, a muscle squeezes every time you push off the ground.",
+    "sentences": [
+     {
+      "id": "S028",
+      "text": "Take one step and look at your legs."
+     },
+     {
+      "id": "S029",
+      "text": "Walking uses some of the biggest muscles in your body."
+     },
+     {
+      "id": "S030",
+      "text": "The big muscles at the front of your thigh tighten to keep your knee steady."
+     },
+     {
+      "id": "S031",
+      "text": "The muscles at the back of your hip and thigh push your body forward."
+     },
+     {
+      "id": "S032",
+      "text": "And down in your calf, a muscle squeezes every time you push off the ground."
+     }
+    ]
+   },
+   {
+    "id": "P06",
+    "text": "That squeeze does a second job. Your leg veins have tiny one-way valves, like little doors. When your calf muscle tightens, it presses on the veins and pushes blood up towards your heart. The valves close behind it, so the blood can't slide back down. Doctors call this the calf muscle pump. It's one reason your ankles can swell when you sit still on a long flight.",
+    "sentences": [
+     {
+      "id": "S033",
+      "text": "That squeeze does a second job."
+     },
+     {
+      "id": "S034",
+      "text": "Your leg veins have tiny one-way valves, like little doors."
+     },
+     {
+      "id": "S035",
+      "text": "When your calf muscle tightens, it presses on the veins and pushes blood up towards your heart."
+     },
+     {
+      "id": "S036",
+      "text": "The valves close behind it, so the blood can't slide back down."
+     },
+     {
+      "id": "S037",
+      "text": "Doctors call this the calf muscle pump."
+     },
+     {
+      "id": "S038",
+      "text": "It's one reason your ankles can swell when you sit still on a long flight."
+     }
+    ]
+   },
+   {
+    "id": "P07",
+    "text": "So every step moves blood. But those working muscles need fuel to keep going. Where do they get it?",
+    "sentences": [
+     {
+      "id": "S039",
+      "text": "So every step moves blood."
+     },
+     {
+      "id": "S040",
+      "text": "But those working muscles need fuel to keep going."
+     },
+     {
+      "id": "S041",
+      "text": "Where do they get it?"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ch3",
+  "title": "Where does the sugar go?",
+  "paragraphs": [
+   {
+    "id": "P08",
+    "text": "After you eat, sugar from your food moves into your blood. Your body needs to clear it out and store it somewhere. And the biggest place it goes is your muscles. When researchers measured this, about eighty percent of the sugar cleared from the blood went into muscle.",
+    "sentences": [
+     {
+      "id": "S042",
+      "text": "After you eat, sugar from your food moves into your blood."
+     },
+     {
+      "id": "S043",
+      "text": "Your body needs to clear it out and store it somewhere."
+     },
+     {
+      "id": "S044",
+      "text": "And the biggest place it goes is your muscles."
+     },
+     {
+      "id": "S045",
+      "text": "When researchers measured this, about eighty percent of the sugar cleared from the blood went into muscle."
+     }
+    ]
+   },
+   {
+    "id": "P09",
+    "text": "Normally, muscles need a hormone called insulin to let sugar in. Insulin works like a key. But a working muscle has its own way in. When it contracts, it moves little sugar doors to its surface and pulls sugar in by itself. So when your legs are moving, they soak up sugar from your blood.",
+    "sentences": [
+     {
+      "id": "S046",
+      "text": "Normally, muscles need a hormone called insulin to let sugar in."
+     },
+     {
+      "id": "S047",
+      "text": "Insulin works like a key."
+     },
+     {
+      "id": "S048",
+      "text": "But a working muscle has its own way in."
+     },
+     {
+      "id": "S049",
+      "text": "When it contracts, it moves little sugar doors to its surface and pulls sugar in by itself."
+     },
+     {
+      "id": "S050",
+      "text": "So when your legs are moving, they soak up sugar from your blood."
+     }
+    ]
+   },
+   {
+    "id": "P10",
+    "text": "This is why the timing of a walk can matter. In a study from New Zealand, people with type 2 diabetes tried two plans. First, one thirty-minute walk a day, whenever they liked. Then, a ten-minute walk after each meal. Same total time. But walking after meals lowered their blood sugar after eating by about twelve percent. After dinner, the drop was bigger, about twenty-two percent.",
+    "sentences": [
+     {
+      "id": "S051",
+      "text": "This is why the timing of a walk can matter."
+     },
+     {
+      "id": "S052",
+      "text": "In a study from New Zealand, people with type 2 diabetes tried two plans."
+     },
+     {
+      "id": "S053",
+      "text": "First, one thirty-minute walk a day, whenever they liked."
+     },
+     {
+      "id": "S054",
+      "text": "Then, a ten-minute walk after each meal."
+     },
+     {
+      "id": "S055",
+      "text": "Same total time."
+     },
+     {
+      "id": "S056",
+      "text": "But walking after meals lowered their blood sugar after eating by about twelve percent."
+     },
+     {
+      "id": "S057",
+      "text": "After dinner, the drop was bigger, about twenty-two percent."
+     }
+    ]
+   },
+   {
+    "id": "P11",
+    "text": "So a walk works on your blood sugar right away. But all that blood, full of fuel, needs something to push it around. That's the job of the heart. What does walking do to it?",
+    "sentences": [
+     {
+      "id": "S058",
+      "text": "So a walk works on your blood sugar right away."
+     },
+     {
+      "id": "S059",
+      "text": "But all that blood, full of fuel, needs something to push it around."
+     },
+     {
+      "id": "S060",
+      "text": "That's the job of the heart."
+     },
+     {
+      "id": "S061",
+      "text": "What does walking do to it?"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ch4",
+  "title": "What does walking do to your heart?",
+  "paragraphs": [
+   {
+    "id": "P12",
+    "text": "At rest, an adult heart usually beats between sixty and one hundred times a minute. When you start walking, it beats faster. It sends more blood to the muscles that are working. The blood vessels in those muscles widen to let it through. Like any muscle, your heart adapts to the work you give it.",
+    "sentences": [
+     {
+      "id": "S062",
+      "text": "At rest, an adult heart usually beats between sixty and one hundred times a minute."
+     },
+     {
+      "id": "S063",
+      "text": "When you start walking, it beats faster."
+     },
+     {
+      "id": "S064",
+      "text": "It sends more blood to the muscles that are working."
+     },
+     {
+      "id": "S065",
+      "text": "The blood vessels in those muscles widen to let it through."
+     },
+     {
+      "id": "S066",
+      "text": "Like any muscle, your heart adapts to the work you give it."
+     }
+    ]
+   },
+   {
+    "id": "P13",
+    "text": "Something else happens after the walk ends. Your blood pressure can stay lower than it was before, for hours. Scientists call this post-exercise hypotension. One walk gives you a small dip. Walking most days keeps giving it to you.",
+    "sentences": [
+     {
+      "id": "S067",
+      "text": "Something else happens after the walk ends."
+     },
+     {
+      "id": "S068",
+      "text": "Your blood pressure can stay lower than it was before, for hours."
+     },
+     {
+      "id": "S069",
+      "text": "Scientists call this post-exercise hypotension."
+     },
+     {
+      "id": "S070",
+      "text": "One walk gives you a small dip."
+     },
+     {
+      "id": "S071",
+      "text": "Walking most days keeps giving it to you."
+     }
+    ]
+   },
+   {
+    "id": "P14",
+    "text": "So how much is enough? The World Health Organization says adults should get at least 150 minutes of moderate activity a week. That's about twenty minutes a day. A brisk walk counts. And it doesn't have to happen all at once. Short walks add up too. But your heart isn't the only organ that changes. What about the one doing the thinking?",
+    "sentences": [
+     {
+      "id": "S072",
+      "text": "So how much is enough?"
+     },
+     {
+      "id": "S073",
+      "text": "The World Health Organization says adults should get at least 150 minutes of moderate activity a week."
+     },
+     {
+      "id": "S074",
+      "text": "That's about twenty minutes a day."
+     },
+     {
+      "id": "S075",
+      "text": "A brisk walk counts."
+     },
+     {
+      "id": "S076",
+      "text": "And it doesn't have to happen all at once."
+     },
+     {
+      "id": "S077",
+      "text": "Short walks add up too."
+     },
+     {
+      "id": "S078",
+      "text": "But your heart isn't the only organ that changes."
+     },
+     {
+      "id": "S079",
+      "text": "What about the one doing the thinking?"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ch5",
+  "title": "What does walking do to your brain?",
+  "paragraphs": [
+   {
+    "id": "P15",
+    "text": "Deep inside your brain there's a curled-up structure called the hippocampus. Its name means seahorse, because of its shape. It helps you form new memories. And as we get older, it slowly shrinks.",
+    "sentences": [
+     {
+      "id": "S080",
+      "text": "Deep inside your brain there's a curled-up structure called the hippocampus."
+     },
+     {
+      "id": "S081",
+      "text": "Its name means seahorse, because of its shape."
+     },
+     {
+      "id": "S082",
+      "text": "It helps you form new memories."
+     },
+     {
+      "id": "S083",
+      "text": "And as we get older, it slowly shrinks."
+     }
+    ]
+   },
+   {
+    "id": "P16",
+    "text": "In one study, older adults walked for forty minutes, three days a week, for a year. Another group only did stretching. Then the researchers scanned their brains. In the walkers, the hippocampus grew by about two percent. In the stretching group, it kept shrinking. That's like turning back one to two years of age-related loss.",
+    "sentences": [
+     {
+      "id": "S084",
+      "text": "In one study, older adults walked for forty minutes, three days a week, for a year."
+     },
+     {
+      "id": "S085",
+      "text": "Another group only did stretching."
+     },
+     {
+      "id": "S086",
+      "text": "Then the researchers scanned their brains."
+     },
+     {
+      "id": "S087",
+      "text": "In the walkers, the hippocampus grew by about two percent."
+     },
+     {
+      "id": "S088",
+      "text": "In the stretching group, it kept shrinking."
+     },
+     {
+      "id": "S089",
+      "text": "That's like turning back one to two years of age-related loss."
+     }
+    ]
+   },
+   {
+    "id": "P17",
+    "text": "A much larger study in the UK followed about seventy-eight thousand adults wearing step counters. People who took about nine thousand eight hundred steps a day had about half the risk of dementia. Even three thousand eight hundred steps a day was linked to about a quarter lower risk.",
+    "sentences": [
+     {
+      "id": "S090",
+      "text": "A much larger study in the UK followed about seventy-eight thousand adults wearing step counters."
+     },
+     {
+      "id": "S091",
+      "text": "People who took about nine thousand eight hundred steps a day had about half the risk of dementia."
+     },
+     {
+      "id": "S092",
+      "text": "Even three thousand eight hundred steps a day was linked to about a quarter lower risk."
+     }
+    ]
+   },
+   {
+    "id": "P18",
+    "text": "Walking even changes how you think in the moment. In a Stanford study, eighty-one percent of people came up with more creative ideas while walking than while sitting. Even on a treadmill, facing a blank wall. So if walking can change the brain, can it change how we feel?",
+    "sentences": [
+     {
+      "id": "S093",
+      "text": "Walking even changes how you think in the moment."
+     },
+     {
+      "id": "S094",
+      "text": "In a Stanford study, eighty-one percent of people came up with more creative ideas while walking than while sitting."
+     },
+     {
+      "id": "S095",
+      "text": "Even on a treadmill, facing a blank wall."
+     },
+     {
+      "id": "S096",
+      "text": "So if walking can change the brain, can it change how we feel?"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ch6",
+  "title": "Can a walk change your mood?",
+  "paragraphs": [
+   {
+    "id": "P19",
+    "text": "Depression is common. The World Health Organization calls it a leading cause of disability around the world. In 2022, scientists combined fifteen studies with nearly two hundred thousand people. They looked at who later developed depression.",
+    "sentences": [
+     {
+      "id": "S097",
+      "text": "Depression is common."
+     },
+     {
+      "id": "S098",
+      "text": "The World Health Organization calls it a leading cause of disability around the world."
+     },
+     {
+      "id": "S099",
+      "text": "In 2022, scientists combined fifteen studies with nearly two hundred thousand people."
+     },
+     {
+      "id": "S100",
+      "text": "They looked at who later developed depression."
+     }
+    ]
+   },
+   {
+    "id": "P20",
+    "text": "People who got the activity doctors recommend, about two and a half hours of brisk walking a week, had a twenty-five percent lower risk of depression. People who did half that still had about an eighteen percent lower risk. The biggest jump came from going from nothing to something.",
+    "sentences": [
+     {
+      "id": "S101",
+      "text": "People who got the activity doctors recommend, about two and a half hours of brisk walking a week, had a twenty-five percent lower risk of depression."
+     },
+     {
+      "id": "S102",
+      "text": "People who did half that still had about an eighteen percent lower risk."
+     },
+     {
+      "id": "S103",
+      "text": "The biggest jump came from going from nothing to something."
+     }
+    ]
+   },
+   {
+    "id": "P21",
+    "text": "That's good news if you're starting from zero. You don't need a lot to get much of the benefit. A short walk around the block is a fine place to begin. But it raises a practical question. When you do walk, does it matter how fast?",
+    "sentences": [
+     {
+      "id": "S104",
+      "text": "That's good news if you're starting from zero."
+     },
+     {
+      "id": "S105",
+      "text": "You don't need a lot to get much of the benefit."
+     },
+     {
+      "id": "S106",
+      "text": "A short walk around the block is a fine place to begin."
+     },
+     {
+      "id": "S107",
+      "text": "But it raises a practical question."
+     },
+     {
+      "id": "S108",
+      "text": "When you do walk, does it matter how fast?"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ch7",
+  "title": "Does speed matter?",
+  "paragraphs": [
+   {
+    "id": "P22",
+    "text": "Researchers in Britain looked at more than fifty thousand walkers. They simply asked people how fast they usually walked. Slow, average, or brisk. Then they followed them for years.",
+    "sentences": [
+     {
+      "id": "S109",
+      "text": "Researchers in Britain looked at more than fifty thousand walkers."
+     },
+     {
+      "id": "S110",
+      "text": "They simply asked people how fast they usually walked."
+     },
+     {
+      "id": "S111",
+      "text": "Slow, average, or brisk."
+     },
+     {
+      "id": "S112",
+      "text": "Then they followed them for years."
+     }
+    ]
+   },
+   {
+    "id": "P23",
+    "text": "Compared with slow walkers, people who said they walked at an average pace had about a twenty percent lower risk of dying during the study. Brisk walkers had about a twenty-four percent lower risk.",
+    "sentences": [
+     {
+      "id": "S113",
+      "text": "Compared with slow walkers, people who said they walked at an average pace had about a twenty percent lower risk of dying during the study."
+     },
+     {
+      "id": "S114",
+      "text": "Brisk walkers had about a twenty-four percent lower risk."
+     }
+    ]
+   },
+   {
+    "id": "P24",
+    "text": "So what counts as brisk? A simple guide is about one hundred steps a minute. That's roughly where walking becomes moderate exercise. You can check it yourself. Count your steps for fifteen seconds, then multiply by four. If you get about twenty-five, you're right around one hundred steps a minute.",
+    "sentences": [
+     {
+      "id": "S115",
+      "text": "So what counts as brisk?"
+     },
+     {
+      "id": "S116",
+      "text": "A simple guide is about one hundred steps a minute."
+     },
+     {
+      "id": "S117",
+      "text": "That's roughly where walking becomes moderate exercise."
+     },
+     {
+      "id": "S118",
+      "text": "You can check it yourself."
+     },
+     {
+      "id": "S119",
+      "text": "Count your steps for fifteen seconds, then multiply by four."
+     },
+     {
+      "id": "S120",
+      "text": "If you get about twenty-five, you're right around one hundred steps a minute."
+     }
+    ]
+   },
+   {
+    "id": "P25",
+    "text": "Pace helps. But two large step studies found something interesting. Once they counted everyone's total steps, how fast they walked made little extra difference. The count mattered most. Which brings us back to the big question. How many steps do you actually need?",
+    "sentences": [
+     {
+      "id": "S121",
+      "text": "Pace helps."
+     },
+     {
+      "id": "S122",
+      "text": "But two large step studies found something interesting."
+     },
+     {
+      "id": "S123",
+      "text": "Once they counted everyone's total steps, how fast they walked made little extra difference."
+     },
+     {
+      "id": "S124",
+      "text": "The count mattered most."
+     },
+     {
+      "id": "S125",
+      "text": "Which brings us back to the big question."
+     },
+     {
+      "id": "S126",
+      "text": "How many steps do you actually need?"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ch8",
+  "title": "How many steps do you really need?",
+  "paragraphs": [
+   {
+    "id": "P26",
+    "text": "Remember I-Min Lee, the researcher who traced the number back to that step counter? In 2019, her team studied about sixteen thousand women, with an average age of seventy-two. Each wore a step counter for a week, and the team followed them for over four years.",
+    "sentences": [
+     {
+      "id": "S127",
+      "text": "Remember I-Min Lee, the researcher who traced the number back to that step counter?"
+     },
+     {
+      "id": "S128",
+      "text": "In 2019, her team studied about sixteen thousand women, with an average age of seventy-two."
+     },
+     {
+      "id": "S129",
+      "text": "Each wore a step counter for a week, and the team followed them for over four years."
+     }
+    ]
+   },
+   {
+    "id": "P27",
+    "text": "The least active women took about two thousand seven hundred steps a day. Women who took about four thousand four hundred had a forty-one percent lower risk of dying during the study. The benefit kept growing with more steps, then leveled off at around seven thousand five hundred.",
+    "sentences": [
+     {
+      "id": "S130",
+      "text": "The least active women took about two thousand seven hundred steps a day."
+     },
+     {
+      "id": "S131",
+      "text": "Women who took about four thousand four hundred had a forty-one percent lower risk of dying during the study."
+     },
+     {
+      "id": "S132",
+      "text": "The benefit kept growing with more steps, then leveled off at around seven thousand five hundred."
+     }
+    ]
+   },
+   {
+    "id": "P28",
+    "text": "A US study of nearly five thousand adults found something similar. Eight thousand steps a day, compared with four thousand, was linked to about half the risk of dying during the study.",
+    "sentences": [
+     {
+      "id": "S133",
+      "text": "A US study of nearly five thousand adults found something similar."
+     },
+     {
+      "id": "S134",
+      "text": "Eight thousand steps a day, compared with four thousand, was linked to about half the risk of dying during the study."
+     }
+    ]
+   },
+   {
+    "id": "P29",
+    "text": "Then, in 2022, researchers pooled fifteen studies from around the world, almost forty-eight thousand people. For people over sixty, the benefit leveled off at about six to eight thousand steps. For younger adults, it leveled off at about eight to ten thousand. In other words, there comes a point where more steps add less.",
+    "sentences": [
+     {
+      "id": "S135",
+      "text": "Then, in 2022, researchers pooled fifteen studies from around the world, almost forty-eight thousand people."
+     },
+     {
+      "id": "S136",
+      "text": "For people over sixty, the benefit leveled off at about six to eight thousand steps."
+     },
+     {
+      "id": "S137",
+      "text": "For younger adults, it leveled off at about eight to ten thousand."
+     },
+     {
+      "id": "S138",
+      "text": "In other words, there comes a point where more steps add less."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ending",
+  "title": "Back to the step counter",
+  "paragraphs": [
+   {
+    "id": "P30",
+    "text": "So let's go back to that little step counter from 1965. Its number wasn't based on science. It was a name that sounded good. But it turned out to be a fair guess. For younger adults, the benefit really does run up toward ten thousand.",
+    "sentences": [
+     {
+      "id": "S139",
+      "text": "So let's go back to that little step counter from 1965."
+     },
+     {
+      "id": "S140",
+      "text": "Its number wasn't based on science."
+     },
+     {
+      "id": "S141",
+      "text": "It was a name that sounded good."
+     },
+     {
+      "id": "S142",
+      "text": "But it turned out to be a fair guess."
+     },
+     {
+      "id": "S143",
+      "text": "For younger adults, the benefit really does run up toward ten thousand."
+     }
+    ]
+   },
+   {
+    "id": "P31",
+    "text": "And the most important part was never the exact number. You don't need a special number to begin. The first few thousand steps make the biggest difference, especially if you're starting from very few. Every walk moves your blood, feeds your muscles, steadies your blood sugar, and is good for your brain. So the best number of steps to start with is a few more than yesterday.",
+    "sentences": [
+     {
+      "id": "S144",
+      "text": "And the most important part was never the exact number."
+     },
+     {
+      "id": "S145",
+      "text": "You don't need a special number to begin."
+     },
+     {
+      "id": "S146",
+      "text": "The first few thousand steps make the biggest difference, especially if you're starting from very few."
+     },
+     {
+      "id": "S147",
+      "text": "Every walk moves your blood, feeds your muscles, steadies your blood sugar, and is good for your brain."
+     },
+     {
+      "id": "S148",
+      "text": "So the best number of steps to start with is a few more than yesterday."
+     }
+    ]
+   }
+  ]
+ }
+]

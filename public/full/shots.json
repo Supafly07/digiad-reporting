@@ -1,0 +1,990 @@
+{
+ "S001": {
+  "screen": [
+   "The step counter fades in on the dotted page; “10,000 STEPS A DAY” fades in above it."
+  ],
+  "camera": [
+   "slow push in on the step counter"
+  ]
+ },
+ "S002": {
+  "screen": [
+   "A soft light travels once around the dial; “1965” counts up under it."
+  ],
+  "camera": []
+ },
+ "S003": {
+  "screen": [
+   "“10,000-STEP METER” fades in above the counter."
+  ],
+  "camera": []
+ },
+ "S004": {
+  "screen": [
+   "“NEVER TESTED” replaces it."
+  ],
+  "camera": []
+ },
+ "S005": {
+  "screen": [
+   "Footprints appear one by one along the bottom of the page."
+  ],
+  "camera": [
+   "eases back and right, making room"
+  ]
+ },
+ "S006": {
+  "screen": [
+   "A walking figure fades in beside the counter."
+  ],
+  "camera": []
+ },
+ "S007": {
+  "screen": [
+   "A light rises through the walker from foot to head."
+  ],
+  "camera": []
+ },
+ "S008": {
+  "screen": [
+   "“HOW MANY STEPS?” fades in under the footprints."
+  ],
+  "camera": []
+ },
+ "S009": {
+  "screen": [
+   "Walker and footprints fade; a light runs along the needle on “close”."
+  ],
+  "camera": [
+   "pushes back in to the step counter"
+  ]
+ },
+ "S010": {
+  "screen": [
+   "“THE STEP COUNTER” fades in above it."
+  ],
+  "camera": [
+   "slow push closer"
+  ]
+ },
+ "S011": {
+  "screen": [
+   "“JAPAN · 1960s” fades in to the left of the counter."
+  ],
+  "camera": [
+   "drifts left onto open page"
+  ]
+ },
+ "S012": {
+  "screen": [
+   "“TOKYO 1964 / OLYMPIC GAMES” replaces it."
+  ],
+  "camera": []
+ },
+ "S013": {
+  "screen": [
+   "“YAMASA” to the left of the counter; a light slides down the belt clip on “clipped”."
+  ],
+  "camera": [
+   "back onto the counter"
+  ]
+ },
+ "S014": {
+  "screen": [
+   "A ring circles the needle and a magnifying circle grows out of it to the right, joined by two thin lines; inside, the needle glows as it moves; “+1” fades in under the lens."
+  ],
+  "camera": [
+   "widens to hold the counter and the lens"
+  ]
+ },
+ "S015": {
+  "screen": [
+   "“MANPO-KEI” fades in to the right of the counter."
+  ],
+  "camera": []
+ },
+ "S016": {
+  "screen": [
+   "“MAN / 10,000” appears under it."
+  ],
+  "camera": []
+ },
+ "S017": {
+  "screen": [
+   "“PO / STEP” appears next to it."
+  ],
+  "camera": []
+ },
+ "S018": {
+  "screen": [
+   "“KEI / METER” completes the row."
+  ],
+  "camera": []
+ },
+ "S019": {
+  "screen": [
+   "The three words fade; “= 10,000-STEP METER” appears; light circles the dial."
+  ],
+  "camera": []
+ },
+ "S020": {
+  "screen": [
+   "Light runs up the needle."
+  ],
+  "camera": [
+   "eases back and down"
+  ]
+ },
+ "S021": {
+  "screen": [
+   "“A NAME, NOT A FINDING” fades in beside the counter."
+  ],
+  "camera": []
+ },
+ "S022": {
+  "screen": [
+   "A timeline draws itself under the counter from “1965” to “2019”; “I-MIN LEE / HARVARD” at the 2019 end; a light travels back along it to 1965."
+  ],
+  "camera": []
+ },
+ "S023": {
+  "screen": [
+   "“BRAND NAME” at the 1965 end; light circles the dial."
+  ],
+  "camera": []
+ },
+ "S024": {
+  "screen": [
+   "Counter and timeline fade; a row of six small walkers appears one by one; “REAL PEOPLE / WEARING STEP COUNTERS”."
+  ],
+  "camera": [
+   "glides right along the page"
+  ]
+ },
+ "S025": {
+  "screen": [
+   "Lights rise through two of the walkers."
+  ],
+  "camera": []
+ },
+ "S026": {
+  "screen": [
+   "The other walkers fade; a light runs down the last walker's legs."
+  ],
+  "camera": [
+   "pushes toward the last walker"
+  ]
+ },
+ "S027": {
+  "screen": [
+   "The last walker fades as the camera travels on; the legs fade in ahead."
+  ],
+  "camera": [
+   "carries on right to the next part of the page"
+  ]
+ },
+ "S028": {
+  "screen": [
+   "The striding legs fade in; “ONE STEP” above them; a light runs down the front leg."
+  ],
+  "camera": []
+ },
+ "S029": {
+  "screen": [
+   "“BIG MUSCLES” to the left; lights travel down both thighs."
+  ],
+  "camera": []
+ },
+ "S030": {
+  "screen": [
+   "A ring circles the front thigh; a magnifying circle grows out to the right showing the thigh muscle; lights run down its fibers on “tighten”; a light circles the knee on “steady”."
+  ],
+  "camera": [
+   "shifts right to make room for a lens"
+  ]
+ },
+ "S031": {
+  "screen": [
+   "A light runs down the back of the hip and thigh; “BACK OF HIP & THIGH”; a thin arrow draws itself forward under the legs."
+  ],
+  "camera": []
+ },
+ "S032": {
+  "screen": [
+   "A ring circles the back calf; a magnifying circle grows out to the left with the calf muscle; lights squeeze up it."
+  ],
+  "camera": [
+   "shifts left toward the calf"
+  ]
+ },
+ "S033": {
+  "screen": [
+   "The calf lights up again."
+  ],
+  "camera": []
+ },
+ "S034": {
+  "screen": [
+   "Legs and lens fade; a cut-open vein with two valves fades in; “ONE-WAY VALVES”; both valves glow softly."
+  ],
+  "camera": [
+   "recentres"
+  ]
+ },
+ "S035": {
+  "screen": [
+   "The calf muscle fades in beside the vein and gives a small squeeze; lights flow up through the vein; “UP TO THE HEART”."
+  ],
+  "camera": []
+ },
+ "S036": {
+  "screen": [
+   "The upper valve glows as it closes; a light slips down and stops at the valve."
+  ],
+  "camera": [
+   "pushes in on the vein"
+  ]
+ },
+ "S037": {
+  "screen": [
+   "“CALF MUSCLE PUMP” under both; lights rise through the calf and the vein."
+  ],
+  "camera": [
+   "eases back out"
+  ]
+ },
+ "S038": {
+  "screen": [
+   "“SITTING STILL / ON A LONG FLIGHT”; a slow light settles at the bottom of the vein."
+  ],
+  "camera": []
+ },
+ "S039": {
+  "screen": [
+   "Vein and calf fade; the legs return; lights travel up both legs."
+  ],
+  "camera": []
+ },
+ "S040": {
+  "screen": [
+   "Lights in both thighs; “FUEL?” above."
+  ],
+  "camera": []
+ },
+ "S041": {
+  "screen": [
+   "The camera travels right; footprints walk along the page under it as the legs fade behind."
+  ],
+  "camera": [
+   "travels right to the next part of the page"
+  ]
+ },
+ "S042": {
+  "screen": [
+   "A plate of food fades in, then a sugar cube beside it, then a blood vessel; lights start flowing through the vessel."
+  ],
+  "camera": []
+ },
+ "S043": {
+  "screen": [
+   "More lights in the vessel; “WHERE DOES IT GO?”."
+  ],
+  "camera": []
+ },
+ "S044": {
+  "screen": [
+   "Plate and cube fade; a thigh muscle fades in beside the vessel; a light runs down its fibers."
+  ],
+  "camera": [
+   "glides right past the vessel"
+  ]
+ },
+ "S045": {
+  "screen": [
+   "A thin 100% line draws under them, then a bar fills to 80%; “80% / OF IT WENT INTO MUSCLE” counts up; light in the muscle."
+  ],
+  "camera": []
+ },
+ "S046": {
+  "screen": [
+   "Vessel, muscle and bar fade; an old key fades in; “INSULIN”."
+  ],
+  "camera": []
+ },
+ "S047": {
+  "screen": [
+   "A light slides along the key."
+  ],
+  "camera": []
+ },
+ "S048": {
+  "screen": [
+   "A bundle of muscle fibers fades in to the right; the key fades."
+  ],
+  "camera": []
+ },
+ "S049": {
+  "screen": [
+   "The fiber bundle gives a small squeeze; dots appear along its surface; “SUGAR DOORS / GLUT4”; lights flow into the bundle."
+  ],
+  "camera": [
+   "pushes in on the fibers"
+  ]
+ },
+ "S050": {
+  "screen": [
+   "The vessel returns beside the fibers; lights flow from blood into muscle; “WHILE YOU MOVE”."
+  ],
+  "camera": [
+   "eases back"
+  ]
+ },
+ "S051": {
+  "screen": [
+   "“TIMING” fades in over an empty part of the page."
+  ],
+  "camera": [
+   "moves down the page to a comparison"
+  ]
+ },
+ "S052": {
+  "screen": [
+   "“NEW ZEALAND STUDY / TYPE 2 DIABETES”; two empty boxes draw themselves side by side."
+  ],
+  "camera": []
+ },
+ "S053": {
+  "screen": [
+   "Left box: “30 MIN / ONCE A DAY”, a small walker, and one long bar."
+  ],
+  "camera": []
+ },
+ "S054": {
+  "screen": [
+   "Right box: three small plates appear, each followed by a short bar; “10 MIN × 3 / AFTER EACH MEAL”."
+  ],
+  "camera": []
+ },
+ "S055": {
+  "screen": [
+   "Lights run along both bars; “SAME 30 MINUTES” under the boxes."
+  ],
+  "camera": []
+ },
+ "S056": {
+  "screen": [
+   "Boxes empty; “BLOOD SUGAR AFTER MEALS”; two bars grow — after-meal walking ends about 12% lower; “−12%” counts in."
+  ],
+  "camera": []
+ },
+ "S057": {
+  "screen": [
+   "A thinner third bar grows for dinner; “DINNER −22%”."
+  ],
+  "camera": []
+ },
+ "S058": {
+  "screen": [
+   "Lights rise up both bars."
+  ],
+  "camera": []
+ },
+ "S059": {
+  "screen": [
+   "Charts fade; the blood vessel returns; lights flow through it toward the right."
+  ],
+  "camera": [
+   "rises back up to the blood vessel"
+  ]
+ },
+ "S060": {
+  "screen": [
+   "The camera travels right with footprints walking under it; the vessel fades behind and the heart fades in ahead."
+  ],
+  "camera": [
+   "travels right to the heart"
+  ]
+ },
+ "S061": {
+  "screen": [
+   "The heart starts a slow, gentle beat; a light flows up the aorta."
+  ],
+  "camera": []
+ },
+ "S062": {
+  "screen": [
+   "A heartbeat trace draws itself beside the heart; “60–100 / BEATS A MINUTE AT REST”; a light runs along the trace."
+  ],
+  "camera": [
+   "shifts right"
+  ]
+ },
+ "S063": {
+  "screen": [
+   "A second, quicker trace draws itself below the first; “WALKING”."
+  ],
+  "camera": []
+ },
+ "S064": {
+  "screen": [
+   "Traces fade; a thigh muscle fades in to the left; a thin line draws from the heart to it and lights travel along it."
+  ],
+  "camera": [
+   "pans left and eases back"
+  ]
+ },
+ "S065": {
+  "screen": [
+   "A blood vessel fades in under the muscle and slowly widens; lights pass through; “VESSELS WIDEN”."
+  ],
+  "camera": []
+ },
+ "S066": {
+  "screen": [
+   "Muscle and vessel fade; lights run through the heart; “THE HEART ADAPTS”."
+  ],
+  "camera": [
+   "back onto the heart"
+  ]
+ },
+ "S067": {
+  "screen": [
+   "Heart fades; a stethoscope and the empty axes of a chart fade in further down the page."
+  ],
+  "camera": [
+   "moves down the page"
+  ]
+ },
+ "S068": {
+  "screen": [
+   "A blood-pressure line draws itself: steady, a bump during the walk, then lower for a long stretch; “BLOOD PRESSURE”, “BEFORE”, “FOR HOURS”."
+  ],
+  "camera": []
+ },
+ "S069": {
+  "screen": [
+   "“POST-EXERCISE HYPOTENSION”; a light runs along the low part of the line."
+  ],
+  "camera": []
+ },
+ "S070": {
+  "screen": [
+   "A dot marks the dip; “ONE WALK, A SMALL DIP”."
+  ],
+  "camera": []
+ },
+ "S071": {
+  "screen": [
+   "The first line fades; a new one draws three days of walks, each followed by a dip; “MOST DAYS”."
+  ],
+  "camera": []
+ },
+ "S072": {
+  "screen": [
+   "Chart fades; “HOW MUCH?” over open page."
+  ],
+  "camera": [
+   "glides right"
+  ]
+ },
+ "S073": {
+  "screen": [
+   "Seven squares (the days of a week) draw in a row; “150 MIN / A WEEK · WHO” counts up."
+  ],
+  "camera": []
+ },
+ "S074": {
+  "screen": [
+   "Each day fills in; “≈ 20 MIN A DAY”."
+  ],
+  "camera": []
+ },
+ "S075": {
+  "screen": [
+   "A small walker fades in at the end of the week; a light rises through it."
+  ],
+  "camera": []
+ },
+ "S076": {
+  "screen": [
+   "Each day's block re-draws as three short pieces."
+  ],
+  "camera": []
+ },
+ "S077": {
+  "screen": [
+   "A light runs across the whole week; “SHORT WALKS ADD UP”."
+  ],
+  "camera": []
+ },
+ "S078": {
+  "screen": [
+   "The camera travels down the page with footprints walking under it; the week fades behind."
+  ],
+  "camera": [
+   "travels down the page to the brain"
+  ]
+ },
+ "S079": {
+  "screen": [
+   "The brain fades in; a light runs along its upper folds."
+  ],
+  "camera": []
+ },
+ "S080": {
+  "screen": [
+   "A ring circles a spot deep in the brain; a magnifying circle grows out to the right showing the curled hippocampus; “HIPPOCAMPUS”."
+  ],
+  "camera": [
+   "shifts right for a lens"
+  ]
+ },
+ "S081": {
+  "screen": [
+   "A seahorse fades in beside the lens; a light traces the hippocampus's curl."
+  ],
+  "camera": [
+   "drifts further right"
+  ]
+ },
+ "S082": {
+  "screen": [
+   "Seahorse fades; lights travel along the hippocampus; “NEW MEMORIES”."
+  ],
+  "camera": []
+ },
+ "S083": {
+  "screen": [
+   "Brain and lens fade; a single hippocampus fades in and slowly shrinks; “SHRINKS WITH AGE”."
+  ],
+  "camera": [
+   "moves down the page"
+  ]
+ },
+ "S084": {
+  "screen": [
+   "Left side: a small walker; “40 MIN · 3× A WEEK / FOR A YEAR”."
+  ],
+  "camera": []
+ },
+ "S085": {
+  "screen": [
+   "Right side: “STRETCHING ONLY”."
+  ],
+  "camera": []
+ },
+ "S086": {
+  "screen": [
+   "A hippocampus appears under each group; a light scans along each one."
+  ],
+  "camera": []
+ },
+ "S087": {
+  "screen": [
+   "The walkers' hippocampus grows a little; “+2%”."
+  ],
+  "camera": []
+ },
+ "S088": {
+  "screen": [
+   "The stretching group's shrinks a little; “≈ −1.4%”."
+  ],
+  "camera": []
+ },
+ "S089": {
+  "screen": [
+   "Top labels fade; “1–2 YEARS TURNED BACK”; a curved arrow draws back over the walkers' hippocampus."
+  ],
+  "camera": []
+ },
+ "S090": {
+  "screen": [
+   "Five small step counters appear in a row; “78,000 ADULTS / UNITED KINGDOM” counts up."
+  ],
+  "camera": [
+   "glides left along the page"
+  ]
+ },
+ "S091": {
+  "screen": [
+   "Step counters fade; two bars grow — the 9,800-step group's bar is half as tall; “−50% / DEMENTIA RISK”."
+  ],
+  "camera": []
+ },
+ "S092": {
+  "screen": [
+   "A middle bar for 3,800 steps grows to three quarters; “−25%”."
+  ],
+  "camera": []
+ },
+ "S093": {
+  "screen": [
+   "Bars fade; the brain returns with an old light bulb beside it; a light runs along the filament."
+  ],
+  "camera": [
+   "glides back right to the brain"
+  ]
+ },
+ "S094": {
+  "screen": [
+   "“81% / MORE CREATIVE WHILE WALKING” counts up; the filament glows again."
+  ],
+  "camera": []
+ },
+ "S095": {
+  "screen": [
+   "An empty rectangle draws itself — the blank wall; “BLANK WALL”."
+  ],
+  "camera": [
+   "drifts right"
+  ]
+ },
+ "S096": {
+  "screen": [
+   "Bulb and wall fade; lights run through the brain; the camera travels left with footprints walking under it."
+  ],
+  "camera": [
+   "travels left to the next part of the page"
+  ]
+ },
+ "S097": {
+  "screen": [
+   "A nerve cell fades in; “DEPRESSION IS COMMON”."
+  ],
+  "camera": []
+ },
+ "S098": {
+  "screen": [
+   "“A LEADING CAUSE OF DISABILITY / WORLD HEALTH ORGANIZATION”; a light travels along the nerve cell."
+  ],
+  "camera": []
+ },
+ "S099": {
+  "screen": [
+   "Fifteen small blocks appear in a row; “15 STUDIES”; “191,130 PEOPLE” counts up."
+  ],
+  "camera": [
+   "eases down"
+  ]
+ },
+ "S100": {
+  "screen": [
+   "Blocks fade; lights travel through the nerve cell."
+  ],
+  "camera": []
+ },
+ "S101": {
+  "screen": [
+   "Neuron fades; a baseline draws and a light runs along it; “2.5 HOURS A WEEK / BRISK WALKING”; two bars grow — none vs recommended; “−25%”."
+  ],
+  "camera": [
+   "settles on a chart"
+  ]
+ },
+ "S102": {
+  "screen": [
+   "A middle bar for half the activity; “−18%”."
+  ],
+  "camera": []
+ },
+ "S103": {
+  "screen": [
+   "A line draws from the “none” bar to the “half” bar; a light runs down it; “BIGGEST JUMP”."
+  ],
+  "camera": []
+ },
+ "S104": {
+  "screen": [
+   "“STARTING FROM ZERO”; on “zero” the chart fades and a single footprint appears."
+  ],
+  "camera": []
+ },
+ "S105": {
+  "screen": [
+   "“THE FIRST STEPS COUNT MOST”; two more footprints follow."
+  ],
+  "camera": []
+ },
+ "S106": {
+  "screen": [
+   "A loop (the block) draws itself around the footprints; a light travels around it; “A FINE PLACE TO BEGIN”."
+  ],
+  "camera": []
+ },
+ "S107": {
+  "screen": [
+   "The light goes round the block again."
+  ],
+  "camera": [
+   "eases back"
+  ]
+ },
+ "S108": {
+  "screen": [
+   "A metronome appears at the edge of the loop; then the camera travels left with footprints walking under it."
+  ],
+  "camera": [
+   "travels left to the next part of the page"
+  ]
+ },
+ "S109": {
+  "screen": [
+   "A row of seven small walkers has appeared one by one; “50,225 WALKERS / BRITAIN” counts up."
+  ],
+  "camera": []
+ },
+ "S110": {
+  "screen": [
+   "“HOW FAST DO YOU WALK?”; lights rise through three of the walkers."
+  ],
+  "camera": []
+ },
+ "S111": {
+  "screen": [
+   "The crowd fades; three walkers appear one by one with “SLOW”, “AVERAGE”, “BRISK”."
+  ],
+  "camera": [
+   "eases back to hold three walkers and a chart"
+  ]
+ },
+ "S112": {
+  "screen": [
+   "A long thin line draws under all three — the years of follow-up."
+  ],
+  "camera": []
+ },
+ "S113": {
+  "screen": [
+   "Risk bars grow under the slow and average walkers; the average one is shorter; “−20%”."
+  ],
+  "camera": []
+ },
+ "S114": {
+  "screen": [
+   "The brisk walker's bar grows, shortest of the three; “−24%”."
+  ],
+  "camera": []
+ },
+ "S115": {
+  "screen": [
+   "Walkers and bars fade; a metronome fades in."
+  ],
+  "camera": [
+   "moves down the page"
+  ]
+ },
+ "S116": {
+  "screen": [
+   "A light swings up and down the metronome arm at walking pace; “100 STEPS A MINUTE” counts up."
+  ],
+  "camera": []
+ },
+ "S117": {
+  "screen": [
+   "“MODERATE EXERCISE”."
+  ],
+  "camera": []
+ },
+ "S118": {
+  "screen": [
+   "A footprint appears to the left of the metronome."
+  ],
+  "camera": []
+ },
+ "S119": {
+  "screen": [
+   "A round dial draws above the footprint and a quarter of it fills — fifteen seconds; “× 4”."
+  ],
+  "camera": []
+ },
+ "S120": {
+  "screen": [
+   "“25 × 4 = 100” beside the metronome; the arm glows."
+  ],
+  "camera": []
+ },
+ "S121": {
+  "screen": [
+   "The metronome arm glows once more."
+  ],
+  "camera": []
+ },
+ "S122": {
+  "screen": [
+   "Metronome, dial and footprint fade; two page outlines draw themselves, labelled “2019” and “2020”."
+  ],
+  "camera": []
+ },
+ "S123": {
+  "screen": [
+   "In each page a tall bar grows for total steps and a tiny one for pace once steps are counted."
+  ],
+  "camera": []
+ },
+ "S124": {
+  "screen": [
+   "Pages fade; the step counter returns; light circles its dial."
+  ],
+  "camera": []
+ },
+ "S125": {
+  "screen": [
+   "The camera travels left with footprints walking under it; the counter fades behind."
+  ],
+  "camera": [
+   "travels left to the last part of the page"
+  ]
+ },
+ "S126": {
+  "screen": [
+   "“HOW MANY STEPS?”; a small step counter fades in to the left."
+  ],
+  "camera": []
+ },
+ "S127": {
+  "screen": [
+   "“I-MIN LEE / HARVARD”; light circles the small counter."
+  ],
+  "camera": []
+ },
+ "S128": {
+  "screen": [
+   "“2019” under the counter; “16,741 WOMEN” counts up; “AVERAGE AGE 72”."
+  ],
+  "camera": []
+ },
+ "S129": {
+  "screen": [
+   "A tiny bar for one week of wearing the counter, then a long bar for over four years of follow-up."
+  ],
+  "camera": []
+ },
+ "S130": {
+  "screen": [
+   "Counter fades; the axes of a chart draw — risk of dying against steps a day; a dot marks 2,700 steps."
+  ],
+  "camera": [
+   "settles on the chart"
+  ]
+ },
+ "S131": {
+  "screen": [
+   "The curve draws down to 4,400 steps; a dot; “−41%”; a light runs down the first part of the curve."
+  ],
+  "camera": []
+ },
+ "S132": {
+  "screen": [
+   "The curve keeps falling, then flattens; a dot at 7,500; “LEVELS OFF”; a light runs along the curve."
+  ],
+  "camera": []
+ },
+ "S133": {
+  "screen": [
+   "The curve steps aside; a baseline for a second chart; “≈ 4,800 ADULTS / UNITED STATES”."
+  ],
+  "camera": [
+   "glides right to a second chart"
+  ]
+ },
+ "S134": {
+  "screen": [
+   "A bar for 8,000 steps grows, then a bar for 4,000 twice as tall; “≈ HALF THE RISK”."
+  ],
+  "camera": []
+ },
+ "S135": {
+  "screen": [
+   "Back at the curve, which returns with its axis labels; “2022 · 15 STUDIES”; a light runs the whole curve; “47,471 PEOPLE” counts up."
+  ],
+  "camera": [
+   "glides back to the curve"
+  ]
+ },
+ "S136": {
+  "screen": [
+   "A light settles along the flat part of the curve; a bracket draws under the axis from 6,000 to 8,000; “OVER 60: 6,000–8,000”."
+  ],
+  "camera": []
+ },
+ "S137": {
+  "screen": [
+   "A light slides along the first bracket; a second bracket from 8,000 to 10,000; “UNDER 60: 8,000–10,000”."
+  ],
+  "camera": []
+ },
+ "S138": {
+  "screen": [
+   "A light runs along the flat end of the curve; “MORE STEPS ADD LESS”."
+  ],
+  "camera": []
+ },
+ "S139": {
+  "screen": [
+   "The camera travels back up the page with footprints walking under it, to where the video began; the step counter returns; “1965”."
+  ],
+  "camera": [
+   "travels back up the page to the step counter"
+  ]
+ },
+ "S140": {
+  "screen": [
+   "“10,000 / NOT FROM A STUDY” above the counter."
+  ],
+  "camera": []
+ },
+ "S141": {
+  "screen": [
+   "A light circles the dial."
+  ],
+  "camera": []
+ },
+ "S142": {
+  "screen": [
+   "“A FAIR GUESS”; the needle glows."
+  ],
+  "camera": []
+ },
+ "S143": {
+  "screen": [
+   "A steps line draws under the counter with the 8,000–10,000 bracket; a light runs up to the “10,000” mark."
+  ],
+  "camera": [
+   "eases down"
+  ]
+ },
+ "S144": {
+  "screen": [
+   "Line fades; the camera eases back to the opening framing; light circles the dial."
+  ],
+  "camera": [
+   "eases back and right, as at the start"
+  ]
+ },
+ "S145": {
+  "screen": [
+   "The first footprint of the opening reappears; “BEGIN”."
+  ],
+  "camera": []
+ },
+ "S146": {
+  "screen": [
+   "The rest of the footprints follow one by one; “THE FIRST FEW THOUSAND STEPS”."
+  ],
+  "camera": []
+ },
+ "S147": {
+  "screen": [
+   "The walker from the opening returns; on each phrase a light moves up through it — legs, thigh, body, head."
+  ],
+  "camera": []
+ },
+ "S148": {
+  "screen": [
+   "“A FEW MORE THAN YESTERDAY”; a last slow push in as the video ends on the page it began on."
+  ],
+  "camera": [
+   "a last slow push"
+  ]
+ }
+}

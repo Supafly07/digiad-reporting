@@ -9,6 +9,7 @@ Working checklist. Tick items as they are done so the work can resume from here.
   is used through kie.ai — same model, same prompt format. 7 pictures reused from the short.
 - Voice: ElevenLabs "Quentin - Narrator and Educator", eleven_multilingual_v2 (same as the short),
   one take per paragraph, checked against a transcript; bad paragraphs regenerated.
+- Long camera trips between chapters are walked by a faint trail of footprints, so no frame is an empty page.
 - Format: 1920x1080, 60 fps. One global timeline on one page; each chapter is a "Part"
   composition rendering its slice, so parts join seamlessly. Parts rendered muted, joined,
   then the narration is muxed once.
@@ -16,8 +17,8 @@ Working checklist. Tick items as they are done so the work can resume from here.
 ## Step 1 — plan and script
 - [x] Research and verify facts -> facts.md (cut anything without a solid source)
 - [x] Script ~1,500 words: hook (first 30 s), 8 chapters, ending returns to the opening
-- [ ] Shot list for every sentence (something new on screen at least every 5 s)
-- [ ] Picture list (~20) -> script.md
+- [x] Shot list for every sentence (something new on screen at least every 5 s)
+- [x] Picture list (~20) -> script.md
 
 ## Step 2 — pictures
 - [x] Prompts for the 14 new pictures (neuron + light bulb remade once each)
@@ -31,11 +32,11 @@ Working checklist. Tick items as they are done so the work can resume from here.
 - [x] Transcribe, align to the script -> word timings; regenerate misread paragraphs
 
 ## Step 4 — animation
-- [ ] Template: landscape, chapters/parts, diagrams that draw themselves, depth layers,
+- [x] Template: landscape, chapters/parts, diagrams that draw themselves, depth layers,
       ambient camera drift, lights on diagrams
-- [ ] Trace light paths on new pictures
-- [ ] Settings: page layout + camera + events for every chapter
-- [ ] Layout checker passes on every frame
+- [x] Trace light paths on new pictures
+- [x] Settings: page layout + camera + events for every chapter
+- [x] Layout checker passes on every frame
 
 ## Step 5 — check and render
 - [ ] Stills every second per chapter, reviewed; fixes applied

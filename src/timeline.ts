@@ -175,6 +175,24 @@ export const pulseScale = (p: Picture, time: number, words: Word[]) => {
 	return 1 + p.pulse.amount * beat * env;
 };
 
+// Product of a picture's slow size changes at this time.
+export const growScale = (p: Picture, time: number, words: Word[]) =>
+	(p.grow ?? []).reduce((k, g) => k * lerp(1, g.to, smoother((time - resolveTime(g.at, words)) / g.dur)), 1);
+
+// Map a normalized point on a picture to world space, following its scale, rotation and mirroring.
+export const pictureMapper = (p: Picture, scale: number) => {
+	const cx = p.x + p.w / 2;
+	const cy = p.y + p.h / 2;
+	const r = ((p.rotate ?? 0) * Math.PI) / 180;
+	const cos = Math.cos(r);
+	const sin = Math.sin(r);
+	return (n: Vec): Vec => {
+		const dx = (p.x + n[0] * p.w - cx) * scale * (p.flip ? -1 : 1);
+		const dy = (p.y + n[1] * p.h - cy) * scale;
+		return [cx + dx * cos - dy * sin, cy + dx * sin + dy * cos];
+	};
+};
+
 // Smooth curve through traced points (Catmull-Rom), sampled for constant-speed lookup.
 export const buildPath = (pts: Vec[]) => {
 	const out: Vec[] = [];

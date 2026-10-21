@@ -1,0 +1,225 @@
+{
+ "leadIn": 0.5,
+ "pauseParagraph": 0.75,
+ "pauseChapter": 1.4,
+ "duration": 599.6264,
+ "paragraphs": [
+  {
+   "paragraph": "P01",
+   "chapter": "intro",
+   "start": 0.5,
+   "duration": 15.4205,
+   "gain_db": 3.2
+  },
+  {
+   "paragraph": "P02",
+   "chapter": "intro",
+   "start": 16.6705,
+   "duration": 14.0925,
+   "gain_db": 2.1
+  },
+  {
+   "paragraph": "P03",
+   "chapter": "ch1",
+   "start": 32.163,
+   "duration": 31.4132,
+   "gain_db": 3.4
+  },
+  {
+   "paragraph": "P04",
+   "chapter": "ch1",
+   "start": 64.3262,
+   "duration": 26.8135,
+   "gain_db": 2.6
+  },
+  {
+   "paragraph": "P05",
+   "chapter": "ch2",
+   "start": 92.5397,
+   "duration": 22.9713,
+   "gain_db": 3.3
+  },
+  {
+   "paragraph": "P06",
+   "chapter": "ch2",
+   "start": 116.2611,
+   "duration": 23.5093,
+   "gain_db": 3.9
+  },
+  {
+   "paragraph": "P07",
+   "chapter": "ch2",
+   "start": 140.5204,
+   "duration": 6.3259,
+   "gain_db": 3.6
+  },
+  {
+   "paragraph": "P08",
+   "chapter": "ch3",
+   "start": 148.2463,
+   "duration": 17.7284,
+   "gain_db": 3.3
+  },
+  {
+   "paragraph": "P09",
+   "chapter": "ch3",
+   "start": 166.7247,
+   "duration": 20.1883,
+   "gain_db": 2.2
+  },
+  {
+   "paragraph": "P10",
+   "chapter": "ch3",
+   "start": 187.6629,
+   "duration": 28.038,
+   "gain_db": 3.2
+  },
+  {
+   "paragraph": "P11",
+   "chapter": "ch3",
+   "start": 216.451,
+   "duration": 10.8441,
+   "gain_db": 3.2
+  },
+  {
+   "paragraph": "P12",
+   "chapter": "ch4",
+   "start": 228.695,
+   "duration": 20.155,
+   "gain_db": 3.4
+  },
+  {
+   "paragraph": "P13",
+   "chapter": "ch4",
+   "start": 249.6,
+   "duration": 16.121,
+   "gain_db": 4.0
+  },
+  {
+   "paragraph": "P14",
+   "chapter": "ch4",
+   "start": 266.471,
+   "duration": 22.9273,
+   "gain_db": 2.5
+  },
+  {
+   "paragraph": "P15",
+   "chapter": "ch5",
+   "start": 290.7983,
+   "duration": 13.3724,
+   "gain_db": 3.9
+  },
+  {
+   "paragraph": "P16",
+   "chapter": "ch5",
+   "start": 304.9207,
+   "duration": 22.1479,
+   "gain_db": 2.7
+  },
+  {
+   "paragraph": "P17",
+   "chapter": "ch5",
+   "start": 327.8186,
+   "duration": 16.6884,
+   "gain_db": 2.8
+  },
+  {
+   "paragraph": "P18",
+   "chapter": "ch5",
+   "start": 345.257,
+   "duration": 18.2588,
+   "gain_db": 1.2
+  },
+  {
+   "paragraph": "P19",
+   "chapter": "ch6",
+   "start": 364.9158,
+   "duration": 16.2489,
+   "gain_db": 2.3
+  },
+  {
+   "paragraph": "P20",
+   "chapter": "ch6",
+   "start": 381.9147,
+   "duration": 17.5811,
+   "gain_db": 1.6
+  },
+  {
+   "paragraph": "P21",
+   "chapter": "ch6",
+   "start": 400.2458,
+   "duration": 15.2788,
+   "gain_db": 3.0
+  },
+  {
+   "paragraph": "P22",
+   "chapter": "ch7",
+   "start": 416.9246,
+   "duration": 13.4564,
+   "gain_db": 5.1
+  },
+  {
+   "paragraph": "P23",
+   "chapter": "ch7",
+   "start": 431.131,
+   "duration": 12.6096,
+   "gain_db": 5.5
+  },
+  {
+   "paragraph": "P24",
+   "chapter": "ch7",
+   "start": 444.4906,
+   "duration": 20.2892,
+   "gain_db": 3.5
+  },
+  {
+   "paragraph": "P25",
+   "chapter": "ch7",
+   "start": 465.5298,
+   "duration": 17.8815,
+   "gain_db": 3.9
+  },
+  {
+   "paragraph": "P26",
+   "chapter": "ch8",
+   "start": 484.8113,
+   "duration": 16.6784,
+   "gain_db": 0.8
+  },
+  {
+   "paragraph": "P27",
+   "chapter": "ch8",
+   "start": 502.2397,
+   "duration": 18.6687,
+   "gain_db": 4.0
+  },
+  {
+   "paragraph": "P28",
+   "chapter": "ch8",
+   "start": 521.6584,
+   "duration": 11.1693,
+   "gain_db": 2.7
+  },
+  {
+   "paragraph": "P29",
+   "chapter": "ch8",
+   "start": 533.5776,
+   "duration": 23.2541,
+   "gain_db": 2.2
+  },
+  {
+   "paragraph": "P30",
+   "chapter": "ending",
+   "start": 558.2318,
+   "duration": 16.9308,
+   "gain_db": 2.2
+  },
+  {
+   "paragraph": "P31",
+   "chapter": "ending",
+   "start": 575.9126,
+   "duration": 24.2138,
+   "gain_db": 2.5
+  }
+ ]
+}
