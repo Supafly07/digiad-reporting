@@ -42,6 +42,6 @@ Working checklist. Tick items as they are done so the work can resume from here.
 - [x] Stills every second per chapter, reviewed; fixes applied
       (602 stills reviewed as contact sheets; fixes: year counter, empty-page moments, label
       collisions, chart crossfades, counting labels, a few layouts; changed moments re-rendered)
-- [ ] Render parts, join, mux narration -> out/full-video.mp4
-- [ ] Verify duration, audio sync, no black frames
-- [ ] Commit and push
+- [x] Render parts, join, mux narration -> out/full-video.mp4
+- [x] Verify duration, audio sync, no black frames
+- [x] Commit and push

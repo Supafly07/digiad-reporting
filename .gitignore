@@ -35,3 +35,4 @@ out/parts/
 public/full/narration.wav
 out/*.log
 out/render_parts.sh
+out/full-video.mp4
