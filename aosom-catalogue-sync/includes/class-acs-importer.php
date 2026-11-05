@@ -230,15 +230,16 @@ class ACS_Importer {
 			$product->set_category_ids( array( $term_id ) );
 		}
 
-		// Status.
+		// Status: only set on NEW products. Never flip an existing product's
+		// published/draft state on a routine sync — the merchant controls that.
 		if ( $force_draft ) {
 			$product->set_status( 'draft' );
-		} else {
+		} elseif ( $is_new ) {
 			$product->set_status( $this->s['publish_status'] );
-			// If out of stock and policy says draft, override.
-			if ( 'draft' === $this->s['out_of_stock_action'] && 'outofstock' === $product->get_stock_status() ) {
-				$product->set_status( 'draft' );
-			}
+		}
+		// Out-of-stock draft policy applies to new and existing alike.
+		if ( ! $force_draft && 'draft' === $this->s['out_of_stock_action'] && 'outofstock' === $product->get_stock_status() ) {
+			$product->set_status( 'draft' );
 		}
 
 		// Meta for manual fulfilment / traceability.

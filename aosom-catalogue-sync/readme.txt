@@ -4,7 +4,7 @@ Tags: woocommerce, dropshipping, csv, import, aosom, feed
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 0.3.0
+Stable tag: 0.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,11 @@ No. If the computed price does not clear (product + shipping), optionally plus a
 extra safety margin, the product is skipped or saved as a draft and logged.
 
 == Changelog ==
+
+= 0.3.1 =
+* Sync no longer changes the status of EXISTING products (keeps them
+  published/draft as the merchant set them); the Draft default applies to newly
+  created products only. Out-of-stock draft policy still applies to all.
 
 = 0.3.0 =
 * Default column mapping set to the verified live Aosom UK feed header
