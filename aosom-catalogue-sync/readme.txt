@@ -4,7 +4,7 @@ Tags: woocommerce, dropshipping, csv, import, aosom, feed
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 0.3.1
+Stable tag: 0.3.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,13 @@ No. If the computed price does not clear (product + shipping), optionally plus a
 extra safety margin, the product is skipped or saved as a draft and logged.
 
 == Changelog ==
+
+= 0.3.2 =
+* Reuse products the supplier/previous importer left in Trash instead of failing
+  on a duplicate SKU (trashed products still own their SKU); revived products
+  take the configured new-product status (Draft by default).
+* Each product is imported in its own try/catch so one bad row logs an error and
+  the sync continues instead of aborting.
 
 = 0.3.1 =
 * Sync no longer changes the status of EXISTING products (keeps them

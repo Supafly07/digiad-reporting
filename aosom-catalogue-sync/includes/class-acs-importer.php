@@ -110,7 +110,11 @@ class ACS_Importer {
 
 			if ( ! $price_result['ok'] ) {
 				if ( 'draft' === $this->s['missing_price_action'] && ! $dry ) {
-					$this->upsert( $row, $sku, $title, $source_cat, $cat_map, 0.0, true /* force draft */ );
+					try {
+						$this->upsert( $row, $sku, $title, $source_cat, $cat_map, 0.0, true /* force draft */ );
+					} catch ( \Throwable $e ) {
+						$this->log->record( $sku, 'error', $e->getMessage() );
+					}
 				}
 				$this->log->record( $sku, 'skipped', $price_result['reason'], $extra );
 				$seen[ $sku ] = true;
@@ -129,7 +133,11 @@ class ACS_Importer {
 				continue;
 			}
 
-			$this->upsert( $row, $sku, $title, $source_cat, $cat_map, $price_result['price'], false );
+			try {
+				$this->upsert( $row, $sku, $title, $source_cat, $cat_map, $price_result['price'], false );
+			} catch ( \Throwable $e ) {
+				$this->log->record( $sku, 'error', $e->getMessage(), $extra );
+			}
 			$seen[ $sku ] = true;
 		}
 
@@ -192,8 +200,9 @@ class ACS_Importer {
 	 * Create or update a WooCommerce product from a feed row.
 	 */
 	private function upsert( $row, $sku, $title, $source_cat, $cat_map, $price, $force_draft ) {
-		$product = $this->find_by_sku( $sku );
-		$is_new  = false;
+		$product     = $this->find_by_sku( $sku );
+		$is_new      = false;
+		$was_trashed = ( $product && 'trash' === $product->get_status() );
 
 		if ( ! $product ) {
 			if ( ! $this->s['update_existing'] && false ) {
@@ -234,7 +243,8 @@ class ACS_Importer {
 		// published/draft state on a routine sync — the merchant controls that.
 		if ( $force_draft ) {
 			$product->set_status( 'draft' );
-		} elseif ( $is_new ) {
+		} elseif ( $is_new || $was_trashed ) {
+			// New products, and products revived from trash, take the configured status.
 			$product->set_status( $this->s['publish_status'] );
 		}
 		// Out-of-stock draft policy applies to new and existing alike.
@@ -440,6 +450,19 @@ class ACS_Importer {
 	 */
 	private function find_by_sku( $sku ) {
 		$id = wc_get_product_id_by_sku( $sku );
+		if ( ! $id ) {
+			// A trashed product still owns its SKU in the lookup table and would
+			// block a new insert, so find it (any status, incl. trash) and reuse it.
+			$ids = get_posts( array(
+				'post_type'      => array( 'product', 'product_variation' ),
+				'post_status'    => array( 'publish', 'pending', 'draft', 'private', 'future', 'trash' ),
+				'posts_per_page' => 1,
+				'fields'         => 'ids',
+				'no_found_rows'  => true,
+				'meta_query'     => array( array( 'key' => '_sku', 'value' => $sku ) ),
+			) );
+			$id = $ids ? (int) $ids[0] : 0;
+		}
 		return $id ? wc_get_product( $id ) : null;
 	}
 
