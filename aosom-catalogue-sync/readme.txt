@@ -4,7 +4,7 @@ Tags: woocommerce, dropshipping, csv, import, aosom, feed
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 0.2.0
+Stable tag: 0.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,12 @@ No. If the computed price does not clear (product + shipping), optionally plus a
 extra safety margin, the product is skipped or saved as a draft and logged.
 
 == Changelog ==
+
+= 0.3.0 =
+* Default column mapping set to the verified live Aosom UK feed header
+  (2B Product Price, shipping_fee, Image Link, Shipping Weight, Pet Supplies filter).
+* Default markup set to 40% over landed cost; new products default to Draft for a
+  safe first run. All still configurable in the admin screen.
 
 = 0.2.0 =
 * Add a "Price units" setting (pounds vs pence/cents) so prices from the Aosom

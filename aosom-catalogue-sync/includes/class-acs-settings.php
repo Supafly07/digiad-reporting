@@ -41,27 +41,28 @@ class ACS_Settings {
 			'has_header'          => 1,
 
 			// --- Column mapping (CSV header name -> WooCommerce field) ---
-			// Confirm these names against the real feed header before go-live.
+			// Defaults are set to the live Aosom UK feed header (verified 2026-11).
+			// Every one is remappable in the admin screen for other feeds/stores.
 			'map_sku'             => 'SKU',
 			'map_title'           => 'Title',
 			'map_description'     => 'Description',
-			'map_regular_price'   => 'Price',          // regular product price, inc VAT, excl shipping
-			'map_shipping_price'  => 'Shipping',       // shipping price, inc VAT
-			'map_discount_price'  => 'Discount Price', // promo price - NOT used for selling price by default
+			'map_regular_price'   => '2B Product Price', // Aosom trade price, inc VAT, excl shipping (this is your COST)
+			'map_shipping_price'  => 'shipping_fee',     // shipping price, inc VAT
+			'map_discount_price'  => '',                 // Aosom feed has only deeper trade tiers (2B-VIP etc); not used
 			'map_stock'           => 'Stock',
 			'map_category'        => 'Category',
-			'map_brand'           => 'Brand',
-			'map_ean'             => 'EAN',
-			'map_image'           => 'Image URL',      // primary image
-			'map_images_extra'    => 'Additional Images', // pipe/comma separated gallery (optional)
-			'map_weight'          => 'Weight',
-			'map_url'             => 'Product URL',     // source URL (stored as meta for manual fulfilment)
+			'map_brand'           => '',                 // no brand column in the Aosom feed
+			'map_ean'             => '',                 // no EAN/GTIN column in the Aosom feed
+			'map_image'           => 'Image Link',       // primary image
+			'map_images_extra'    => '',                 // feed uses separate Image2..Image7 columns (not a single list)
+			'map_weight'          => 'Shipping Weight',
+			'map_url'             => '',                 // no source URL column in the feed
 
 			// --- Pricing engine ---
 			'price_unit'          => 'major',          // major = pounds (CSV feed) | minor = pence/cents (Aosom API)
 			'price_source'        => 'regular',        // regular | discount  (regular strongly recommended)
 			'base_mode'           => 'product_plus_shipping', // product_plus_shipping | product_only
-			'markup_percent'      => 10.0,
+			'markup_percent'      => 40.0,
 			'handling_fee'        => 0.0,              // flat amount added after markup
 			'rounding'            => 'charm_99',       // none | charm_99 | charm_95 | nearest_1 | nearest_050
 			'price_includes_tax'  => 1,                // feed prices already include VAT
@@ -69,7 +70,7 @@ class ACS_Settings {
 
 			// --- Category filtering & mapping (makes the plugin reusable across stores) ---
 			// Only import rows whose source category matches one of these (comma separated, case-insensitive substring). Empty = import everything in the feed.
-			'filter_categories'   => 'pet',
+			'filter_categories'   => 'Pet Supplies',
 			'filter_sku_prefix'   => '',               // optional comma separated SKU prefixes
 			'filter_keywords'     => '',               // optional comma separated title keywords
 			// Map a matched source category to a WooCommerce category. One rule per line: "source => Woo Category".
@@ -77,7 +78,7 @@ class ACS_Settings {
 			'default_category'    => 'Pet Supplies',   // fallback Woo category when no rule matches
 
 			// --- Product behaviour ---
-			'publish_status'      => 'publish',        // publish | draft
+			'publish_status'      => 'draft',          // publish | draft  (draft-first is safest; flip to publish once verified)
 			'missing_price_action'=> 'skip',           // skip | draft  (never publish a priced-wrong product)
 			'out_of_stock_action' => 'outofstock',     // outofstock | draft | keep
 			'manage_stock'        => 1,
