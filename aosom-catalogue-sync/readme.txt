@@ -4,7 +4,7 @@ Tags: woocommerce, dropshipping, csv, import, aosom, feed
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 0.1.0
+Stable tag: 0.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,10 @@ No. If the computed price does not clear (product + shipping), optionally plus a
 extra safety margin, the product is skipped or saved as a draft and logged.
 
 == Changelog ==
+
+= 0.2.0 =
+* Add a "Price units" setting (pounds vs pence/cents) so prices from the Aosom
+  API (minor units) and the CSV feed (pounds) are never read 100x out.
 
 = 0.1.0 =
 * Initial release: configurable CSV import, safe pricing engine, dry-run preview,

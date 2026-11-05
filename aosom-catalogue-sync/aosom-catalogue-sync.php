@@ -3,7 +3,7 @@
  * Plugin Name:       Aosom & CSV Catalogue Sync for WooCommerce
  * Plugin URI:        https://digiadagency.co.uk/
  * Description:        Imports and daily-syncs products from a CSV feed (Aosom UK and any other CSV source) into WooCommerce. Category-flexible, with a configurable, preview-able pricing engine that bakes delivery into the price so you never sell below cost.
- * Version:           0.1.0
+ * Version:           0.2.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Digiad Agency
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // No direct access.
 }
 
-define( 'ACS_VERSION', '0.1.0' );
+define( 'ACS_VERSION', '0.2.0' );
 define( 'ACS_PLUGIN_FILE', __FILE__ );
 define( 'ACS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'ACS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );

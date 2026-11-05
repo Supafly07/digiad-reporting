@@ -76,6 +76,7 @@ class ACS_Admin {
 				'map_url'            => array( 'text', __( 'Source URL column', 'aosom-catalogue-sync' ), __( 'Stored for manual Aosom ordering.', 'aosom-catalogue-sync' ) ),
 			),
 			'Pricing' => array(
+				'price_unit'         => array( 'select', __( 'Price units in feed', 'aosom-catalogue-sync' ), __( 'Pounds for the CSV feed; pence/cents for the Aosom API (they quote minor units).', 'aosom-catalogue-sync' ), array( 'major' => 'Pounds (e.g. 49.99)', 'minor' => 'Pence / cents (e.g. 4999)' ) ),
 				'price_source'       => array( 'select', __( 'Price source', 'aosom-catalogue-sync' ), __( 'Use the regular price (recommended) or the discount price.', 'aosom-catalogue-sync' ), array( 'regular' => 'Regular price (recommended)', 'discount' => 'Discount price (not recommended)' ) ),
 				'base_mode'          => array( 'select', __( 'Delivery handling', 'aosom-catalogue-sync' ), __( 'Bake delivery into the price, or charge it separately via WooCommerce shipping.', 'aosom-catalogue-sync' ), array( 'product_plus_shipping' => 'Include delivery in price (product + shipping)', 'product_only' => 'Product only (charge delivery separately)' ) ),
 				'markup_percent'     => array( 'number', __( 'Markup %', 'aosom-catalogue-sync' ), __( 'Added on top of the base. Policy = 10.', 'aosom-catalogue-sync' ) ),

@@ -58,6 +58,7 @@ class ACS_Settings {
 			'map_url'             => 'Product URL',     // source URL (stored as meta for manual fulfilment)
 
 			// --- Pricing engine ---
+			'price_unit'          => 'major',          // major = pounds (CSV feed) | minor = pence/cents (Aosom API)
 			'price_source'        => 'regular',        // regular | discount  (regular strongly recommended)
 			'base_mode'           => 'product_plus_shipping', // product_plus_shipping | product_only
 			'markup_percent'      => 10.0,
@@ -169,6 +170,7 @@ class ACS_Settings {
 		$out['batch_size'] = isset( $input['batch_size'] ) ? max( 1, min( 500, (int) $input['batch_size'] ) ) : $d['batch_size'];
 
 		// Enums.
+		$out['price_unit']           = in_array( $input['price_unit'] ?? '', array( 'major', 'minor' ), true ) ? $input['price_unit'] : $d['price_unit'];
 		$out['price_source']         = in_array( $input['price_source'] ?? '', array( 'regular', 'discount' ), true ) ? $input['price_source'] : $d['price_source'];
 		$out['base_mode']            = in_array( $input['base_mode'] ?? '', array( 'product_plus_shipping', 'product_only' ), true ) ? $input['base_mode'] : $d['base_mode'];
 		$out['rounding']             = in_array( $input['rounding'] ?? '', array( 'none', 'charm_99', 'charm_95', 'nearest_1', 'nearest_050' ), true ) ? $input['rounding'] : $d['rounding'];

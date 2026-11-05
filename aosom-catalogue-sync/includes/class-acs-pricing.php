@@ -52,9 +52,9 @@ class ACS_Pricing {
 	 * }
 	 */
 	public function compute( $regular_product, $shipping, $discount = null ) {
-		$regular_product = $this->to_float( $regular_product );
-		$shipping        = $this->to_float( $shipping );
-		$discount        = ( null === $discount || '' === $discount ) ? null : $this->to_float( $discount );
+		$regular_product = $this->price_in( $regular_product );
+		$shipping        = $this->price_in( $shipping );
+		$discount        = ( null === $discount || '' === $discount ) ? null : $this->price_in( $discount );
 
 		// 1) Validate inputs. A zero/negative regular price is never valid.
 		if ( $regular_product <= 0 ) {
@@ -142,6 +142,23 @@ class ACS_Pricing {
 			default:
 				return (float) round( $price, 2 );
 		}
+	}
+
+	/**
+	 * Parse a price field and convert to major units (pounds) for internal use.
+	 * Aosom's API quotes prices in minor units (pence); the CSV feed is in
+	 * pounds. The 'price_unit' setting selects which, so a value can never be
+	 * read 100x out.
+	 *
+	 * @param mixed $value Raw price field.
+	 * @return float Amount in major currency units (pounds).
+	 */
+	private function price_in( $value ) {
+		$amount = $this->to_float( $value );
+		if ( isset( $this->s['price_unit'] ) && 'minor' === $this->s['price_unit'] ) {
+			$amount = $amount / 100;
+		}
+		return $amount;
 	}
 
 	/**
